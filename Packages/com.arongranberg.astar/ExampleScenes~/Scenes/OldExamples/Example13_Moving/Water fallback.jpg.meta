@@ -43,3 +43,11 @@ TextureImporter:
     sprites: []
   spritePackingTag: 
   userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Scenes/OldExamples/Example13_Moving/Water
+    fallback.jpg
+  uploadId: 662419

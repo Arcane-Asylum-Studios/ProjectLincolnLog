@@ -71,3 +71,10 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213208
+  packageName: Substance 3D for Unity
+  packageVersion: 3.11
+  assetPath: Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsbsario_details.a
+  uploadId: 654717

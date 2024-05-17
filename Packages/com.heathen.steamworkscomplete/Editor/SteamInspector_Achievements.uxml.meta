@@ -8,3 +8,10 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 13804, guid: 0000000000000000e000000000000000, type: 0}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246652
+  packageName: Toolkit for Steamworks SDK | Steam API
+  packageVersion: 3.4.3.2
+  assetPath: Packages/com.heathen.steamworkscomplete/Editor/SteamInspector_Achievements.uxml
+  uploadId: 661810

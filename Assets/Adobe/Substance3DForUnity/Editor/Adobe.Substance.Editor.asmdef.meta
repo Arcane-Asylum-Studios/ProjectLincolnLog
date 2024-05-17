@@ -5,3 +5,10 @@ AssemblyDefinitionImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213208
+  packageName: Substance 3D for Unity
+  packageVersion: 3.11
+  assetPath: Assets/Adobe/Substance3DForUnity/Editor/Adobe.Substance.Editor.asmdef
+  uploadId: 654717

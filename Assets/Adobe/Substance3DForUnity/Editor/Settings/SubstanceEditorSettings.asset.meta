@@ -6,3 +6,10 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213208
+  packageName: Substance 3D for Unity
+  packageVersion: 3.11
+  assetPath: Assets/Adobe/Substance3DForUnity/Editor/Settings/SubstanceEditorSettings.asset
+  uploadId: 654717
