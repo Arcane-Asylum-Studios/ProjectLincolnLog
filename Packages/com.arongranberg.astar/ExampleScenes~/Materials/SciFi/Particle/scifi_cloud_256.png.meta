@@ -138,3 +138,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Materials/SciFi/Particle/scifi_cloud_256.png
+  uploadId: 662419

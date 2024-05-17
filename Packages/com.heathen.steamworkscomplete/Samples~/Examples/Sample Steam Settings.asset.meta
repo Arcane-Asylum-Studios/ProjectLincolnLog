@@ -6,3 +6,11 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246652
+  packageName: Toolkit for Steamworks SDK | Steam API
+  packageVersion: 3.4.3.2
+  assetPath: Packages/com.heathen.steamworkscomplete/Samples~/Examples/Sample Steam
+    Settings.asset
+  uploadId: 661810

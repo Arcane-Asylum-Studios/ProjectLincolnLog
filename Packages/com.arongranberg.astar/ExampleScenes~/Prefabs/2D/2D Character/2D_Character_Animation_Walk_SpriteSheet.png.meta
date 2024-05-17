@@ -829,3 +829,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Prefabs/2D/2D Character/2D_Character_Animation_Walk_SpriteSheet.png
+  uploadId: 662419

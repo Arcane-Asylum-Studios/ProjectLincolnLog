@@ -138,3 +138,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Materials/Textures/Terrain/Textures/LightDirt_Texture_512.png
+  uploadId: 662419

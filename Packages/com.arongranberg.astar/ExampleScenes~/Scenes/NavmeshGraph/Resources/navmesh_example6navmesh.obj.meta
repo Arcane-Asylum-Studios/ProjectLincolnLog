@@ -135,3 +135,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Scenes/NavmeshGraph/Resources/navmesh_example6navmesh.obj
+  uploadId: 662419

@@ -31,3 +31,10 @@ TextureImporter:
   compressionQuality: 50
   textureType: -1
   buildTargetSettings: []
+AssetOrigin:
+  serializedVersion: 1
+  productId: 87744
+  packageName: A* Pathfinding Project Pro
+  packageVersion: 5.1.1
+  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Scenes/PointGraph/ground.psd
+  uploadId: 662419

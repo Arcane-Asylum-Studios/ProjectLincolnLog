@@ -114,3 +114,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246652
+  packageName: Toolkit for Steamworks SDK | Steam API
+  packageVersion: 3.4.3.2
+  assetPath: Packages/com.heathen.steamworkscomplete/Editor/Heathen Engineering Icon.png
+  uploadId: 661810
