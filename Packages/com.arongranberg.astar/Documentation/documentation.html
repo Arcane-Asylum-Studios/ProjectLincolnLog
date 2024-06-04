@@ -447,6 +447,7 @@ code {
   margin-bottom: 5px;
 }
 .simplesect .simplesect-title {
+  display: block;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   font-size: 16px;
@@ -899,7 +900,7 @@ table.horizontalAlternative2D3D td.Alt3D {
 </style>
     <script type="text/javascript">
     var pathToRoot = "";
-    var packageVersion = "5.1.1";
+    var packageVersion = "5.1.2";
     var packageBranch = "master_Pro";
     var documentation_collection_base_url = "https://arongranberg.com/astar/documentation";
     var packageIsBeta = false;
@@ -1000,11 +1001,11 @@ table.horizontalAlternative2D3D td.Alt3D {
             <a class="navbar-brand" href="index.html">A* Pathfinding Project</a>
             <div class="dropdown package-version">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    5.1.1
+                    5.1.2
                   <span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" id="package-version-alternatives">
-                  <a href="https://arongranberg.com/astar/documentation/stable/#">5.1.1</a>
+                  <a href="https://arongranberg.com/astar/documentation/stable/#">5.1.2</a>
                 </div>
             </div>
         </div>
@@ -1038,7 +1039,7 @@ table.horizontalAlternative2D3D td.Alt3D {
 	<p>Pathfinding is all about finding the best path between point A and B. This is what the A* Pathfinding Project does, in this tutorial you will learn how to set up the project in a new scene and get a simple AI moving while avoiding obstacles.</p><p>This AI you will write will not be very advanced, it is just the minimal amount of code needed to get moving and following a path. If you want a more advanced AI, you can either extend the script you will write in this tutorial or use (or extend) the AIPath or <a href='https://arongranberg.com/astar/documentation/stable/richai.html'>RichAI </a> scripts included in the package (see part 2 for basic usage of the RichAI component).</p><h2 id='getstarted-installing' >Installation</h2><p>The first thing you need to do, if you haven't done so already, is to download the A* Pathfinding Project.</p><p>Please read the installation guide here: <a href='https://arongranberg.com/astar/documentation/stable/installation.html'>Installation Guide</a>.</p><p>The project can be downloaded from <a href='https://www.arongranberg.com/astar/download' >here</a>. You can either download the free version with some limited features (but still very powerful) or buy the pro version which has more cool stuff included.</p><p>If you want, you can explore the different example scenes in the project before you start with the next section. Depending on how you installed the package, you may need to import these separately in the Unity Package Manager.</p><p></p><div class='simplesect simplesect-see' ><span class='simplesect-title' >See</span><p><a href='https://arongranberg.com/astar/documentation/stable/examplescenes.html'>Example Scenes</a></p></div><p>
 </p><h2 id='overview' >Overview</h2><p>There are several different parts of the package. Broadly, they can be grouped into:<ul><li><p>Movement scripts, which tell the agent how to move and where it should move (see <a href='https://arongranberg.com/astar/documentation/stable/movementscripts.html'>Movement scripts</a>).</p>
 </li><li><p>Graphs, which describe where an agent can move (see <a href='https://arongranberg.com/astar/documentation/stable/graphtypes.html'>Graph Types</a>).</p>
-</li><li><p>Temporary obstacles, which cut holes in the navmesh or update it in other ways (see <a href='https://arongranberg.com/astar/documentation/stable/tilemaps.html#graph-updates'>Graph Updates</a>).</p>
+</li><li><p>Temporary obstacles, which cut holes in the navmesh or update it in other ways (see <a href='https://arongranberg.com/astar/documentation/stable/graphupdates.html'>Graph Updates during Runtime</a>).</p>
 </li><li><p>Off-mesh links, which allow an agent to move or jump between otherwise disconnected parts of the navmesh (see <a href='https://arongranberg.com/astar/documentation/stable/nodelink2.html'>NodeLink2</a>).</p>
 </li><li><p>Path modifiers, which post-process paths to for example smooth them (see <a href='https://arongranberg.com/astar/documentation/stable/modifiers2.html'>Using Modifiers</a>).</p>
 </li></ul>

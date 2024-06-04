@@ -528,6 +528,8 @@ namespace Pathfinding {
 		/// The up direction defines what "inside" a node means. A point is inside a node if it is inside the triangle when seen from above.
 		///
 		/// See: <see cref="GetNearest"/>
+		///
+		/// See: <see cref="IsPointOnNavmesh"/>, if you only need to know if the point is on the navmesh or not.
 		/// </summary>
 		public GraphNode PointOnNavmesh (Vector3 position, NNConstraint constraint) {
 			if (tiles == null) return null;

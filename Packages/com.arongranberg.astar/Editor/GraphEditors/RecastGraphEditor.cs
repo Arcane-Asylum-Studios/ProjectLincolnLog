@@ -222,6 +222,40 @@ namespace Pathfinding {
 			DrawCollectionSettings(graph.collectionSettings, graph.dimensionMode);
 
 			Separator();
+			Header("Agent Characteristics");
+
+			graph.characterRadius = EditorGUILayout.FloatField(new GUIContent("Character Radius", "Radius of the character. It's good to add some margin.\nIn world units."), graph.characterRadius);
+			graph.characterRadius = Mathf.Max(graph.characterRadius, 0);
+
+			if (graph.characterRadius < graph.cellSize * 2) {
+				EditorGUILayout.HelpBox("For best navmesh quality, it is recommended to keep the character radius at least 2 times as large as the voxel size. Smaller voxels will give you higher quality navmeshes, but it will take more time to scan the graph.", MessageType.Warning);
+			}
+
+			if (graph.dimensionMode == RecastGraph.DimensionMode.Dimension3D) {
+				graph.walkableHeight = EditorGUILayout.DelayedFloatField(new GUIContent("Character Height", "Minimum distance to the roof for an area to be walkable"), graph.walkableHeight);
+				graph.walkableHeight = Mathf.Max(graph.walkableHeight, 0);
+
+				graph.walkableClimb = EditorGUILayout.FloatField(new GUIContent("Max Step Height", "How high can the character step"), graph.walkableClimb);
+
+				// A walkableClimb higher than this can cause issues when generating the navmesh since then it can in some cases
+				// Both be valid for a character to walk under an obstacle and climb up on top of it (and that cannot be handled with a navmesh without links)
+				if (graph.walkableClimb >= graph.walkableHeight) {
+					graph.walkableClimb = graph.walkableHeight;
+					EditorGUILayout.HelpBox("Max Step Height should be less than Character Height. Clamping to " + graph.walkableHeight+".", MessageType.Warning);
+				} else if (graph.walkableClimb < 0) {
+					graph.walkableClimb = 0;
+				}
+
+				graph.maxSlope = EditorGUILayout.Slider(new GUIContent("Max Slope", "Approximate maximum slope"), graph.maxSlope, 0F, 90F);
+			}
+
+			if (graph.dimensionMode == RecastGraph.DimensionMode.Dimension2D) {
+				graph.backgroundTraversability = (RecastGraph.BackgroundTraversability)EditorGUILayout.EnumPopup("Background traversability", graph.backgroundTraversability);
+			}
+
+			DrawIndentedList(perLayerModificationsList);
+
+			Separator();
 			Header("Rasterization");
 
 			graph.cellSize = EditorGUILayout.FloatField(new GUIContent("Voxel Size", "Size of one voxel in world units"), graph.cellSize);
@@ -244,33 +278,6 @@ namespace Pathfinding {
 				EditorGUI.indentLevel--;
 			}
 
-			if (graph.dimensionMode == RecastGraph.DimensionMode.Dimension3D) {
-				graph.walkableHeight = EditorGUILayout.DelayedFloatField(new GUIContent("Character Height", "Minimum distance to the roof for an area to be walkable"), graph.walkableHeight);
-				graph.walkableHeight = Mathf.Max(graph.walkableHeight, 0);
-
-				graph.characterRadius = EditorGUILayout.FloatField(new GUIContent("Character Radius", "Radius of the character. It's good to add some margin.\nIn world units."), graph.characterRadius);
-				graph.characterRadius = Mathf.Max(graph.characterRadius, 0);
-
-				if (graph.characterRadius < graph.cellSize * 2) {
-					EditorGUILayout.HelpBox("For best navmesh quality, it is recommended to keep the character radius at least 2 times as large as the voxel size. Smaller voxels will give you higher quality navmeshes, but it will take more time to scan the graph.", MessageType.Warning);
-				}
-
-				graph.walkableClimb = EditorGUILayout.FloatField(new GUIContent("Max Step Height", "How high can the character step"), graph.walkableClimb);
-
-				// A walkableClimb higher than this can cause issues when generating the navmesh since then it can in some cases
-				// Both be valid for a character to walk under an obstacle and climb up on top of it (and that cannot be handled with a navmesh without links)
-				if (graph.walkableClimb >= graph.walkableHeight) {
-					graph.walkableClimb = graph.walkableHeight;
-					EditorGUILayout.HelpBox("Max Step Height should be less than Character Height. Clamping to " + graph.walkableHeight+".", MessageType.Warning);
-				} else if (graph.walkableClimb < 0) {
-					graph.walkableClimb = 0;
-				}
-			}
-
-			if (graph.dimensionMode == RecastGraph.DimensionMode.Dimension3D) {
-				graph.maxSlope = EditorGUILayout.Slider(new GUIContent("Max Slope", "Approximate maximum slope"), graph.maxSlope, 0F, 90F);
-			}
-
 			graph.maxEdgeLength = EditorGUILayout.FloatField(new GUIContent("Max Border Edge Length", "Maximum length of one border edge in the completed navmesh before it is split. A lower value can often yield better quality graphs, but don't use so low values so that you get a lot of thin triangles."), graph.maxEdgeLength);
 			graph.maxEdgeLength = graph.maxEdgeLength < graph.cellSize ? graph.cellSize : graph.maxEdgeLength;
 
@@ -278,15 +285,9 @@ namespace Pathfinding {
 			graph.contourMaxError = EditorGUILayout.IntSlider(new GUIContent("Edge Simplification", "Simplifies the edges of the navmesh such that it is no more than this number of voxels away from the true value.\nIn voxels."), Mathf.RoundToInt(graph.contourMaxError), 0, 5);
 			graph.minRegionSize = EditorGUILayout.FloatField(new GUIContent("Min Region Size", "Small regions will be removed. In voxels"), graph.minRegionSize);
 
-			if (graph.dimensionMode == RecastGraph.DimensionMode.Dimension2D) {
-				graph.backgroundTraversability = (RecastGraph.BackgroundTraversability)EditorGUILayout.EnumPopup("Background traversability", graph.backgroundTraversability);
-			}
-
 			if (graph.collectionSettings.rasterizeColliders || (graph.dimensionMode == RecastGraph.DimensionMode.Dimension3D && graph.collectionSettings.rasterizeTerrain && graph.collectionSettings.rasterizeTrees)) {
 				DrawColliderDetail(graph.collectionSettings);
 			}
-
-			DrawIndentedList(perLayerModificationsList);
 
 			int seenLayers = 0;
 			for (int i = 0; i < graph.perLayerModifications.Count; i++) {
