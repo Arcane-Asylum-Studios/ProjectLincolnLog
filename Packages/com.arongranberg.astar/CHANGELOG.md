@@ -1,3 +1,9 @@
+## 5.1.2 (2024-05-29)
+- Added \reflink{AstarPath.IsPointOnNavmesh} to more easily check if a point is on the navmesh surface of any graph.
+- Added \reflink{NavGraph.IsPointOnNavmesh}, which works the same, but only checks a single graph.
+- Fixed \reflink{ProceduralGraphMover} would not scan new tiles correctly when moving in the +x or +z directions (recent regression).
+- Fixed the recast graph inspector would not show the Character Radius field in 2D mode (regression in 5.1.0).
+
 ## 5.1.1 (2024-05-08)
 - Added a welcome screen when importing the package into a new project.
 		It makes it easy to import the example scenes into the project, something new users are often confused about how to do.
@@ -6,6 +12,7 @@
 - Added \reflink{RecastGraph.collectionSettings.onCollectMeshes} to allow adding custom meshes to be rasterized by the recast graph.
 - Fixed \reflink{FollowerEntity} could throw an exception when it was scaled by a negative value.
 - Improved compatibility with other packages. Previously, \reflink{FollowerEntity} could throw an exception in some projects if, for example, DoTween Pro was installed.
+- Improved styling of the documentation.
 
 ## 5.1.0 (2024-05-02)
 - Breaking changes

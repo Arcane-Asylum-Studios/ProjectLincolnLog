@@ -108,8 +108,8 @@ namespace Pathfinding.Graphs.Navmesh.Voxelization.Burst {
 			int depth = voxelArea.depth;
 
 			// These will be width-1 and depth-1 respectively for all but the last tile row and column of the graph
-			var cropX = Mathf.Min(width - 1, Mathf.CeilToInt((graphSpaceLimits.x - graphSpaceBounds.min.x) / cellSize));
-			var cropZ = Mathf.Min(depth - 1, Mathf.CeilToInt((graphSpaceLimits.y - graphSpaceBounds.min.z) / cellSize));
+			var cropX = Mathf.Min(width - 1, float.IsPositiveInfinity(graphSpaceLimits.x) ? int.MaxValue : Mathf.CeilToInt((graphSpaceLimits.x - graphSpaceBounds.min.x) / cellSize));
+			var cropZ = Mathf.Min(depth - 1, float.IsPositiveInfinity(graphSpaceLimits.y) ? int.MaxValue : Mathf.CeilToInt((graphSpaceLimits.y - graphSpaceBounds.min.z) / cellSize));
 
 			// This loop is the hottest place in the whole rasterization process
 			// it usually accounts for around 50% of the time

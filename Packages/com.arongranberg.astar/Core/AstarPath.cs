@@ -32,7 +32,7 @@ using Thread = System.Threading.Thread;
 [HelpURL("https://arongranberg.com/astar/documentation/stable/astarpath.html")]
 public class AstarPath : VersionedMonoBehaviour {
 	/// <summary>The version number for the A* Pathfinding Project</summary>
-	public static readonly System.Version Version = new System.Version(5, 1, 1);
+	public static readonly System.Version Version = new System.Version(5, 1, 2);
 
 	/// <summary>Information about where the package was downloaded</summary>
 	public enum AstarDistribution { WebsiteDownload, AssetStore, PackageManager };
@@ -2047,6 +2047,45 @@ public class AstarPath : VersionedMonoBehaviour {
 	/// This should ideally be fixed by making NNConstraint an immutable class/struct.
 	/// </summary>
 	static readonly NNConstraint NNConstraintNone = NNConstraint.None;
+
+	/// <summary>
+	/// Cached NNConstraint to avoid unnecessary allocations.
+	/// This should ideally be fixed by making NNConstraint an immutable class/struct.
+	/// </summary>
+	internal static readonly NNConstraint NNConstraintClosestAsSeenFromAbove = new NNConstraint() {
+		constrainWalkability = false,
+		constrainTags = false,
+		constrainDistance = true,
+		distanceMetric = DistanceMetric.ClosestAsSeenFromAbove(),
+	};
+
+	/// <summary>
+	/// True if the point is on a walkable part of the navmesh, as seen from above.
+	///
+	/// A point is considered on the navmesh if it is above or below a walkable navmesh surface, at any distance,
+	/// and if it is not above/below a closer unwalkable node.
+	///
+	/// This uses the graph's natural up direction to determine which way is up.
+	/// Therefore, it will also work on rotated graphs, as well as graphs in 2D mode.
+	///
+	/// This method works for all graph types.
+	/// However, for <see cref="PointGraph"/>s, this will never return true unless you pass in the exact coordinate of a node, since point nodes do not have a surface.
+	///
+	/// Note: For spherical navmeshes (or other weird shapes), this method will not work as expected, as there's no well defined "up" direction.
+	///
+	/// [Open online documentation to see images]
+	///
+	/// See: <see cref="NavGraph.IsPointOnNavmesh"/> to check if a point is on the navmesh of a specific graph.
+	/// </summary>
+	/// <param name="position">The point to check</param>
+	public bool IsPointOnNavmesh (Vector3 position) {
+		// We use the None constraint, instead of Walkable, to avoid ignoring unwalkable nodes that are closer to the point.
+		var nearest = GetNearest(position, NNConstraintClosestAsSeenFromAbove);
+		const float MaxHorizontalDistance = 0.01f;
+		const float MaxCostSqr = MaxHorizontalDistance * MaxHorizontalDistance;
+		// TODO: Set a distance threshold in the NNConstraint, to optimize it
+		return nearest.node != null && nearest.node.Walkable && nearest.distanceCostSqr < MaxCostSqr;
+	}
 
 	/// <summary>
 	/// Returns the nearest node to a position.

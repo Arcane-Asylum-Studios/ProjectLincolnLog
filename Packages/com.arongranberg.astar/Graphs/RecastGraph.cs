@@ -10,6 +10,7 @@ namespace Pathfinding {
 	using Pathfinding.Util;
 	using Pathfinding.Jobs;
 	using Pathfinding.Graphs.Navmesh.Jobs;
+	using Pathfinding.Drawing;
 
 	/// <summary>
 	/// Automatically generates navmesh graphs based on world geometry.
@@ -1033,6 +1034,8 @@ namespace Pathfinding {
 			public void Apply (IGraphUpdateContext ctx) {
 				// Destroy all previous nodes, if any exist
 				graph.DestroyAllNodes();
+				graph.hasExtendedInZ = false;
+				graph.hasExtendedInX = false;
 
 				if (emptyGraph) {
 					graph.SetLayout(tileLayout);
@@ -1081,6 +1084,9 @@ namespace Pathfinding {
 			return new RecastMovePromise(this, new Int2(dx, dz));
 		}
 
+		bool hasExtendedInX = false;
+		bool hasExtendedInZ = false;
+
 		class RecastMovePromise : IGraphUpdatePromise {
 			RecastGraph graph;
 			TileMeshes tileMeshes;
@@ -1100,9 +1106,34 @@ namespace Pathfinding {
 				newTileRect = originalTileRect.Offset(delta);
 				var createdTiles = IntRect.Exclude(newTileRect, originalTileRect);
 
+				// Initially, the graph bounding box size may not be a multiple of the tile size.
+				// This can result in the tiles at the +x and +z borders of the graph being slightly cropped.
+				// When we move the graph, we will round it up to the nearest multiple of the tile size.
+				// However, this means we also need to recalculate those border tiles that may have been
+				// cropped before. So the first time we move in the +x and +z directions, we recalculate
+				// an extra row/column of tiles.
+				// Ideally we'd update all border tiles the first time we move in a direction, but that
+				// would require much more complex logic.
+				// If we move in the -x or -z directions, we don't need to calculate any extra tiles,
+				// and the tiles that were cropped originally will be discarded after the move.
+				if (!graph.hasExtendedInX && delta.x != 0) {
+					if (delta.x > 0) createdTiles.xmin -= 1;
+					graph.hasExtendedInX = true;
+				}
+
+				if (!graph.hasExtendedInZ && delta.y != 0) {
+					if (delta.y > 0) createdTiles.ymin -= 1;
+					graph.hasExtendedInZ = true;
+				}
+
 				var disposeArena = new DisposeArena();
 
-				var buildSettings = RecastBuilder.BuildTileMeshes(graph, new TileLayout(graph), createdTiles);
+				var tileLayout = new TileLayout(graph);
+				// Disable cropping to the graph's exact bounds, since the new tiles are actually
+				// created outside the current bounds of the graph.
+				tileLayout.graphSpaceSize.x = float.PositiveInfinity;
+				tileLayout.graphSpaceSize.z = float.PositiveInfinity;
+				var buildSettings = RecastBuilder.BuildTileMeshes(graph, tileLayout, createdTiles);
 				buildSettings.scene = graph.active.gameObject.scene;
 
 				// Schedule the jobs asynchronously.
@@ -1119,7 +1150,7 @@ namespace Pathfinding {
 				pendingPromise.Dispose();
 				disposeArena.DisposeAll();
 				// Set the tile rect of the newly created tiles relative to the #newTileRect
-				tileMeshes.tileRect = createdTiles.Offset(originalTileRect.Min - newTileRect.Min);
+				tileMeshes.tileRect = createdTiles.Offset(-delta);
 			}
 
 			public void Apply (IGraphUpdateContext ctx) {
