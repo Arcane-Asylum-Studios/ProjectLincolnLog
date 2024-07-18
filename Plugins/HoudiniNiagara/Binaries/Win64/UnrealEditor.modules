@@ -1,0 +1,8 @@
+{
+	"BuildId": "33043543",
+	"Modules": 
+	{
+		"HoudiniNiagara": "UnrealEditor-HoudiniNiagara.dll",
+		"HoudiniNiagaraEditor": "UnrealEditor-HoudiniNiagaraEditor.dll"
+	}
+}

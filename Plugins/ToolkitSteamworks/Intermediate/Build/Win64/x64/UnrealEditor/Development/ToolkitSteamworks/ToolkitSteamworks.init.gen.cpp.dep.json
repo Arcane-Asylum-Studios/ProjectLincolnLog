@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\projectlincolnlogs\\plugins\\toolkitsteamworks\\intermediate\\build\\win64\\unrealeditor\\inc\\toolkitsteamworks\\uht\\toolkitsteamworks.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\projectlincolnlogs\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\github\\projectlincolnlogs\\plugins\\toolkitsteamworks\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\toolkitsteamworks\\definitions.toolkitsteamworks.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

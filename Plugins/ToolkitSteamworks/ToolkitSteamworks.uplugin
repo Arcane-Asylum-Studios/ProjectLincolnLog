@@ -1,0 +1,49 @@
+{
+	"FileVersion": 3,
+	"Version": 2,
+	"VersionName": "2.3",
+	"FriendlyName": "Toolkit for Steamworks SDK",
+	"Description": "Heathen's toolkit for Valve's Steamworks SDK. Includes blueprint nodes, quality of life tools and helpers for every aspect of the Steamworks SDK.",
+	"Category": "Integrations",
+	"CreatedBy": "Heathen",
+	"CreatedByURL": "https://heathen.group",
+	"DocsURL": "https://kb.heathen.group/toolkit-for-steamworks-sdk/unreal",
+	"MarketplaceURL": "https://www.unrealengine.com/marketplace/product/ad658ddf5c434478acb95f9091ea279c",
+	"SupportURL": "https://discord.gg/6X3xrRc",
+	"EngineVersion": "5.4.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ToolkitSteamworks",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SteamShared",
+			"Enabled": true
+		},
+		{
+			"Name": "SteamSockets",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "OnlineSubsystemSteam",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true,
+			"Optional": true
+		}
+	]
+}

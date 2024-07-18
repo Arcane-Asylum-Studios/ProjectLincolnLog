@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HoudiniLiveLink.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GitHub\projectlincolnlogs\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\HoudiniLiveLink.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\HoudiniLiveLinkSource.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\HoudiniLiveLinkSourceFactory.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\SHoudiniLiveLinkSourceFactory.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\HoudiniLiveLink.init.gen.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\HoudiniLiveLinkSourceFactory.gen.cpp.obj"
+"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\Default.rc2.res"
+/OUT:"D:\GitHub\projectlincolnlogs\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\UnrealEditor-HoudiniLiveLink.lib"
