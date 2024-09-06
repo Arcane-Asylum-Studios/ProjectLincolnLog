@@ -81,5 +81,5 @@
 /DPROJECT_COMPANY_NAME="Arcane Asylum Studios"
 /DPROJECT_PRODUCT_NAME="Project Lincoln Logs"
 /DPROJECT_PRODUCT_IDENTIFIER=ProjectLincolnLogs
-/fo "D:\GitHub\projectlincolnlogs\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Default.rc2.res"
+/fo "D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"
