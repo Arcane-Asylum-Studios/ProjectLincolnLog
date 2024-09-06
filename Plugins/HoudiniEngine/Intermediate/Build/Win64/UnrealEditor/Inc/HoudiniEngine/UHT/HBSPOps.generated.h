@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINE_HBSPOps_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_INCLASS_NO_PURE_DECLS \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHBspPointsGrid(); \
 	friend struct Z_Construct_UClass_UHBspPointsGrid_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UHBspPointsGrid)
 
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_ENHANCED_CONSTRUCTORS \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UHBspPointsGrid(UHBspPointsGrid&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~UHBspPointsGrid();
 
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_157_PROLOG
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_GENERATED_BODY \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_157_PROLOG
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_INCLASS_NO_PURE_DECLS \
-	FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_ENHANCED_CONSTRUCTORS \
+	FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_160_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> HOUDINIENGINE_API UClass* StaticClass<class UHBspPointsGrid>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

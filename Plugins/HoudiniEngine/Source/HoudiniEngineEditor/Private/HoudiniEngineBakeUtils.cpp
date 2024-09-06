@@ -1000,7 +1000,7 @@ FHoudiniEngineBakeUtils::BakeFoliageTypes(
 		// Copy all cooked instances to reference the baked instances.
 		auto Instances = FHoudiniFoliageTools::GetAllFoliageInstances(DesiredWorld, OutputObject->FoliageType);
 
-		FHoudiniFoliageTools::SpawnFoliageInstances(DesiredWorld, TargetFoliageType, Instances, {});
+		TArray<AInstancedFoliageActor*> FoliageActors = FHoudiniFoliageTools::SpawnFoliageInstances(DesiredWorld, TargetFoliageType, Instances, {});
 
 		TArray<FVector> InstancesPositions;
 		InstancesPositions.Reserve(Instances.Num());
@@ -1009,9 +1009,17 @@ FHoudiniEngineBakeUtils::BakeFoliageTypes(
 			InstancesPositions.Add(Instance.Location);	
 		}
 
+		TArray<FString> ActorInstancePaths;
+		ActorInstancePaths.Reserve(FoliageActors.Num());
+		for (auto & Instance : FoliageActors) 
+		{
+			ActorInstancePaths.Add(Instance->GetPathName());
+		}
+
 		// Store back output object.
 		BakedObject.FoliageType = TargetFoliageType;
 		BakedObject.FoliageInstancePositions = InstancesPositions;
+		BakedObject.FoliageActors = ActorInstancePaths;
 		InBakeState.SetNewBakedOutputObject(InOutputIndex, Identifier, BakedObject);
     }
 
@@ -5727,15 +5735,16 @@ FHoudiniEngineBakeUtils::BakeCurve(
 	FHoudiniBakedObjectData& BakedObjectData,
 	FName InOverrideFolderPath,
 	AActor* InActor,
-	UActorFactory* InActorFactory)
+	TSubclassOf<AActor> BakeActorClass)
 {
 	if (!IsValid(InActor))
 	{
-		TSubclassOf<AActor> BakeActorClass = nullptr;
 		UActorFactory* Factory = nullptr;
-		if (IsValid(InActorFactory))
+		if (IsValid(BakeActorClass))
 		{
-			Factory = InActorFactory;
+			Factory = GEditor->FindActorFactoryForActorClass(BakeActorClass);
+			if (!Factory)
+				Factory = GEditor->FindActorFactoryByClass(UActorFactoryClass::StaticClass());
 		}
 		else
 		{
@@ -5858,10 +5867,24 @@ FHoudiniEngineBakeUtils::BakeCurve(
 			RemovePreviouslyBakedComponent(PrevComponent);
 		}
 	}
-	
+
+	TSubclassOf<AActor> BakeActorClass = GetBakeActorClassOverride(InOutputObject);
+
 	USplineComponent* NewSplineComponent = nullptr;
 	const FName OutlinerFolderPath = GetOutlinerFolderPath(InResolver, *(PackageParams.HoudiniAssetActorName));
-	if (!BakeCurve(InHoudiniAssetComponent, SplineComponent, DesiredLevel, PackageParams, BakeSettings, BakeActorName, FoundActor, NewSplineComponent, BakedObjectData, OutlinerFolderPath, FoundActor))
+	if (!BakeCurve(
+		InHoudiniAssetComponent, 
+		SplineComponent, 
+		DesiredLevel, 
+		PackageParams, 
+		BakeSettings, 
+		BakeActorName, 
+		FoundActor, 
+		NewSplineComponent, 
+		BakedObjectData, 
+		OutlinerFolderPath, 
+		FoundActor, 
+		BakeActorClass))
 		return false;
 
 	InBakedOutputObject.Actor = FSoftObjectPath(FoundActor).ToString();

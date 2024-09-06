@@ -421,6 +421,9 @@ struct Z_Construct_UClass_UHoudiniAssetComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLandscapeUseTempLayers_MetaData[] = {
 		{ "ModuleRelativePath", "Private/HoudiniAssetComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bEnableCurveEditing_MetaData[] = {
+		{ "ModuleRelativePath", "Private/HoudiniAssetComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bNeedToUpdateEditorProperties_MetaData[] = {
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// Indicates whether or not this component should update the editor's UI\n// This is to prevent successive calls of the function for the same HDAs \n" },
@@ -771,6 +774,8 @@ struct Z_Construct_UClass_UHoudiniAssetComponent_Statics
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_ActorBakeOption;
 	static void NewProp_bLandscapeUseTempLayers_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bLandscapeUseTempLayers;
+	static void NewProp_bEnableCurveEditing_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bEnableCurveEditing;
 	static void NewProp_bNeedToUpdateEditorProperties_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bNeedToUpdateEditorProperties;
 #endif // WITH_EDITORONLY_DATA
@@ -970,6 +975,11 @@ void Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bLandscapeUseTem
 	((UHoudiniAssetComponent*)Obj)->bLandscapeUseTempLayers = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bLandscapeUseTempLayers = { "bLandscapeUseTempLayers", nullptr, (EPropertyFlags)0x0010000800000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UHoudiniAssetComponent), &Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bLandscapeUseTempLayers_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bLandscapeUseTempLayers_MetaData), NewProp_bLandscapeUseTempLayers_MetaData) };
+void Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bEnableCurveEditing_SetBit(void* Obj)
+{
+	((UHoudiniAssetComponent*)Obj)->bEnableCurveEditing = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bEnableCurveEditing = { "bEnableCurveEditing", nullptr, (EPropertyFlags)0x0010000800000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UHoudiniAssetComponent), &Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bEnableCurveEditing_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bEnableCurveEditing_MetaData), NewProp_bEnableCurveEditing_MetaData) };
 void Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bNeedToUpdateEditorProperties_SetBit(void* Obj)
 {
 	((UHoudiniAssetComponent*)Obj)->bNeedToUpdateEditorProperties = 1;
@@ -1057,8 +1067,8 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniAssetC
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_Inputs = { "Inputs", nullptr, (EPropertyFlags)0x0020088000000008, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniAssetComponent, Inputs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Inputs_MetaData), NewProp_Inputs_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_Outputs_Inner = { "Outputs", nullptr, (EPropertyFlags)0x0002000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UHoudiniOutput_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Outputs_Inner_MetaData), NewProp_Outputs_Inner_MetaData) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_Outputs = { "Outputs", nullptr, (EPropertyFlags)0x0020088000000008, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniAssetComponent, Outputs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Outputs_MetaData), NewProp_Outputs_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_BakedOutputs_Inner = { "BakedOutputs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FHoudiniBakedOutput, METADATA_PARAMS(0, nullptr) }; // 2551821974
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_BakedOutputs = { "BakedOutputs", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniAssetComponent, BakedOutputs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BakedOutputs_MetaData), NewProp_BakedOutputs_MetaData) }; // 2551821974
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_BakedOutputs_Inner = { "BakedOutputs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FHoudiniBakedOutput, METADATA_PARAMS(0, nullptr) }; // 3812921005
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_BakedOutputs = { "BakedOutputs", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniAssetComponent, BakedOutputs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BakedOutputs_MetaData), NewProp_BakedOutputs_MetaData) }; // 3812921005
 const UECodeGen_Private::FWeakObjectPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_UntrackedOutputs_Inner = { "UntrackedOutputs", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_UntrackedOutputs = { "UntrackedOutputs", nullptr, (EPropertyFlags)0x0024080000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniAssetComponent, UntrackedOutputs), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UntrackedOutputs_MetaData), NewProp_UntrackedOutputs_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_HandleComponents_Inner = { "HandleComponents", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UHoudiniHandleComponent_NoRegister, METADATA_PARAMS(0, nullptr) };
@@ -1129,6 +1139,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHoudiniA
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_ActorBakeOption_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_ActorBakeOption,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bLandscapeUseTempLayers,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bEnableCurveEditing,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_bNeedToUpdateEditorProperties,
 #endif // WITH_EDITORONLY_DATA
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniAssetComponent_Statics::NewProp_AssetId,
@@ -1229,19 +1240,19 @@ IMPLEMENT_FSTRUCTUREDARCHIVE_SERIALIZER(UHoudiniAssetComponent)
 // End Class UHoudiniAssetComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EHoudiniStaticMeshMethod_StaticEnum, TEXT("EHoudiniStaticMeshMethod"), &Z_Registration_Info_UEnum_EHoudiniStaticMeshMethod, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3491243434U) },
 		{ EHoudiniBakeAfterNextCook_StaticEnum, TEXT("EHoudiniBakeAfterNextCook"), &Z_Registration_Info_UEnum_EHoudiniBakeAfterNextCook, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1498265213U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UHoudiniAssetComponent, UHoudiniAssetComponent::StaticClass, TEXT("UHoudiniAssetComponent"), &Z_Registration_Info_UClass_UHoudiniAssetComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHoudiniAssetComponent), 324991289U) },
+		{ Z_Construct_UClass_UHoudiniAssetComponent, UHoudiniAssetComponent::StaticClass, TEXT("UHoudiniAssetComponent"), &Z_Registration_Info_UClass_UHoudiniAssetComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHoudiniAssetComponent), 2446191742U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_2212991513(TEXT("/Script/HoudiniEngineRuntime"),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_1220544758(TEXT("/Script/HoudiniEngineRuntime"),
+	Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

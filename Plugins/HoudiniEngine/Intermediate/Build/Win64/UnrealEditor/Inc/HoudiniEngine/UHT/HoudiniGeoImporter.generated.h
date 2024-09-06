@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINE_HoudiniGeoImporter_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_INCLASS \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_INCLASS \
 private: \
 	static void StaticRegisterNativesUHoudiniGeoImporter(); \
 	friend struct Z_Construct_UClass_UHoudiniGeoImporter_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UHoudiniGeoImporter)
 
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_STANDARD_CONSTRUCTORS \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UHoudiniGeoImporter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHoudiniGeoImporter) \
@@ -37,12 +37,12 @@ public: \
 	NO_API virtual ~UHoudiniGeoImporter();
 
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_45_PROLOG
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_GENERATED_BODY_LEGACY \
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_45_PROLOG
+#define FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_INCLASS \
-	FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_STANDARD_CONSTRUCTORS \
+	FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_INCLASS \
+	FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h_48_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +50,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> HOUDINIENGINE_API UClass* StaticClass<class UHoudiniGeoImporter>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniGeoImporter_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
