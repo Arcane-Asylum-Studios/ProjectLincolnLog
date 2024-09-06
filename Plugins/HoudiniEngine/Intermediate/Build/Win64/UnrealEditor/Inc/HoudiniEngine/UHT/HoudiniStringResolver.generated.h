@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINE_HoudiniStringResolver_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h_37_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h_37_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniStringResolver_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniStringResolver>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h_72_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h_72_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniAttributeResolver_Statics; \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FHoudiniStringResolver Super;
@@ -30,7 +30,7 @@ template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniStringRe
 template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniAttributeResolver>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniStringResolver_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -14,49 +14,49 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINERUNTIME_HoudiniGeoPartObject_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_78_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_78_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniObjectInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniObjectInfo>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_97_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_97_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniGeoInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniGeoInfo>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_117_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_117_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniPartInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniPartInfo>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_144_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_144_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniVolumeInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniVolumeInfo>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_171_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_171_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniCurveInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniCurveInfo>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_190_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_190_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniMeshSocket_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniMeshSocket>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_263_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h_263_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniGeoPartObject_Statics; \
 	static class UScriptStruct* StaticStruct();
 
@@ -64,7 +64,7 @@ template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniM
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FHoudiniGeoPartObject>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniGeoPartObject_h
 
 
 #define FOREACH_ENUM_EHOUDINIGEOTYPE(op) \

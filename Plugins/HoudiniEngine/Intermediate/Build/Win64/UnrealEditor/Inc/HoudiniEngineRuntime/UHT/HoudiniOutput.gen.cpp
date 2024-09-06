@@ -1745,6 +1745,15 @@ struct Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics
 		{ "ToolTip", "Foliage Type (Baked or user-defined)" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FoliageActors_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Foliage Actor Instances\n" },
+#endif
+		{ "ModuleRelativePath", "Private/HoudiniOutput.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Foliage Actor Instances" },
+#endif
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LevelInstanceActors_MetaData[] = {
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// All exported level instance actors.\n" },
@@ -1788,6 +1797,8 @@ struct Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics
 	static const UECodeGen_Private::FStructPropertyParams NewProp_FoliageInstancePositions_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_FoliageInstancePositions;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FoliageType;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_FoliageActors_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_FoliageActors;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_LevelInstanceActors_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_LevelInstanceActors;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Landscape;
@@ -1814,6 +1825,8 @@ const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FHoudiniBa
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageInstancePositions_Inner = { "FoliageInstancePositions", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageInstancePositions = { "FoliageInstancePositions", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutputObject, FoliageInstancePositions), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FoliageInstancePositions_MetaData), NewProp_FoliageInstancePositions_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageType = { "FoliageType", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutputObject, FoliageType), Z_Construct_UClass_UFoliageType_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FoliageType_MetaData), NewProp_FoliageType_MetaData) };
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageActors_Inner = { "FoliageActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageActors = { "FoliageActors", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutputObject, FoliageActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FoliageActors_MetaData), NewProp_FoliageActors_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_LevelInstanceActors_Inner = { "LevelInstanceActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_LevelInstanceActors = { "LevelInstanceActors", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutputObject, LevelInstanceActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LevelInstanceActors_MetaData), NewProp_LevelInstanceActors_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_Landscape = { "Landscape", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutputObject, Landscape), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Landscape_MetaData), NewProp_Landscape_MetaData) };
@@ -1834,6 +1847,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FH
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageInstancePositions_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageInstancePositions,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageActors_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_FoliageActors,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_LevelInstanceActors_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_LevelInstanceActors,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewProp_Landscape,
@@ -1903,9 +1918,9 @@ struct Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics
 	}
 	static const UECodeGen_Private::FStructParams StructParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects_ValueProp = { "BakedOutputObjects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FHoudiniBakedOutputObject, METADATA_PARAMS(0, nullptr) }; // 2814611933
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects_ValueProp = { "BakedOutputObjects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FHoudiniBakedOutputObject, METADATA_PARAMS(0, nullptr) }; // 2827891129
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects_Key_KeyProp = { "BakedOutputObjects_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FHoudiniBakedOutputObjectIdentifier, METADATA_PARAMS(0, nullptr) }; // 1229885711
-const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects = { "BakedOutputObjects", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutput, BakedOutputObjects), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BakedOutputObjects_MetaData), NewProp_BakedOutputObjects_MetaData) }; // 1229885711 2814611933
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects = { "BakedOutputObjects", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniBakedOutput, BakedOutputObjects), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BakedOutputObjects_MetaData), NewProp_BakedOutputObjects_MetaData) }; // 1229885711 2827891129
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewProp_BakedOutputObjects_Key_KeyProp,
@@ -2657,7 +2672,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR(UHoudiniOutput);
 // End Class UHoudiniOutput
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics
+struct Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EHoudiniCurveOutputType_StaticEnum, TEXT("EHoudiniCurveOutputType"), &Z_Registration_Info_UEnum_EHoudiniCurveOutputType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 816756242U) },
@@ -2672,8 +2687,8 @@ struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source
 		{ FHoudiniBakedOutputObjectIdentifier::StaticStruct, Z_Construct_UScriptStruct_FHoudiniBakedOutputObjectIdentifier_Statics::NewStructOps, TEXT("HoudiniBakedOutputObjectIdentifier"), &Z_Registration_Info_UScriptStruct_HoudiniBakedOutputObjectIdentifier, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniBakedOutputObjectIdentifier), 1229885711U) },
 		{ FHoudiniInstancedOutput::StaticStruct, Z_Construct_UScriptStruct_FHoudiniInstancedOutput_Statics::NewStructOps, TEXT("HoudiniInstancedOutput"), &Z_Registration_Info_UScriptStruct_HoudiniInstancedOutput, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniInstancedOutput), 591330072U) },
 		{ FHoudiniLevelInstanceParams::StaticStruct, Z_Construct_UScriptStruct_FHoudiniLevelInstanceParams_Statics::NewStructOps, TEXT("HoudiniLevelInstanceParams"), &Z_Registration_Info_UScriptStruct_HoudiniLevelInstanceParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniLevelInstanceParams), 3848763663U) },
-		{ FHoudiniBakedOutputObject::StaticStruct, Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewStructOps, TEXT("HoudiniBakedOutputObject"), &Z_Registration_Info_UScriptStruct_HoudiniBakedOutputObject, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniBakedOutputObject), 2814611933U) },
-		{ FHoudiniBakedOutput::StaticStruct, Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewStructOps, TEXT("HoudiniBakedOutput"), &Z_Registration_Info_UScriptStruct_HoudiniBakedOutput, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniBakedOutput), 2551821974U) },
+		{ FHoudiniBakedOutputObject::StaticStruct, Z_Construct_UScriptStruct_FHoudiniBakedOutputObject_Statics::NewStructOps, TEXT("HoudiniBakedOutputObject"), &Z_Registration_Info_UScriptStruct_HoudiniBakedOutputObject, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniBakedOutputObject), 2827891129U) },
+		{ FHoudiniBakedOutput::StaticStruct, Z_Construct_UScriptStruct_FHoudiniBakedOutput_Statics::NewStructOps, TEXT("HoudiniBakedOutput"), &Z_Registration_Info_UScriptStruct_HoudiniBakedOutput, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniBakedOutput), 3812921005U) },
 		{ FHoudiniDataLayer::StaticStruct, Z_Construct_UScriptStruct_FHoudiniDataLayer_Statics::NewStructOps, TEXT("HoudiniDataLayer"), &Z_Registration_Info_UScriptStruct_HoudiniDataLayer, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniDataLayer), 1880887850U) },
 		{ FHoudiniHLODLayer::StaticStruct, Z_Construct_UScriptStruct_FHoudiniHLODLayer_Statics::NewStructOps, TEXT("HoudiniHLODLayer"), &Z_Registration_Info_UScriptStruct_HoudiniHLODLayer, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniHLODLayer), 1242549441U) },
 		{ FHoudiniOutputObject::StaticStruct, Z_Construct_UScriptStruct_FHoudiniOutputObject_Statics::NewStructOps, TEXT("HoudiniOutputObject"), &Z_Registration_Info_UScriptStruct_HoudiniOutputObject, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniOutputObject), 145164782U) },
@@ -2687,9 +2702,9 @@ struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source
 		{ Z_Construct_UClass_UHoudiniOutput, UHoudiniOutput::StaticClass, TEXT("UHoudiniOutput"), &Z_Registration_Info_UClass_UHoudiniOutput, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHoudiniOutput), 534381832U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_4028317787(TEXT("/Script/HoudiniEngineRuntime"),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::EnumInfo));
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_2996314321(TEXT("/Script/HoudiniEngineRuntime"),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniOutput_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINERUNTIME_HoudiniToolTypes_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniToolTypes_h_35_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniToolTypes_h_35_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FCategoryRules_Statics; \
 	HOUDINIENGINERUNTIME_API static class UScriptStruct* StaticStruct();
 
@@ -22,7 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> HOUDINIENGINERUNTIME_API UScriptStruct* StaticStruct<struct FCategoryRules>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniToolTypes_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniToolTypes_h
 
 
 #define FOREACH_ENUM_EHOUDINITOOLTYPE(op) \

@@ -1,9 +1,9 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\hbspops.gen.cpp",
+        "Source": "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\hbspops.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengine\\pch.houdiniengine.h.pch",
+        "PCH": "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengine\\pch.houdiniengine.h.pch",
         "Includes": [
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\generatedcppincludes.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\object.h",
@@ -103,7 +103,7 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\enumproperty.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\textproperty.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\fieldpathproperty.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengine\\private\\hbspops.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengine\\private\\hbspops.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\brush.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\actor.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\inputcore\\classes\\inputcoretypes.h",
@@ -153,7 +153,6 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\async\\fundamental\\scheduler.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\async\\fundamental\\task.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\async\\fundamental\\taskdelegate.h",
-            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\templates\\isinvocable.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\scopeexit.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\hal\\event.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\async\\fundamental\\taskshared.h",
@@ -213,7 +212,7 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\brush.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\polys.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\polys.generated.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\hbspops.generated.h"
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\hbspops.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

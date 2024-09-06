@@ -16,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define HOUDINIENGINE_HoudiniMeshTranslator_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMeshTranslator_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMeshTranslator_h
 
 
 #define FOREACH_ENUM_EHOUDINISPLITTYPE(op) \
