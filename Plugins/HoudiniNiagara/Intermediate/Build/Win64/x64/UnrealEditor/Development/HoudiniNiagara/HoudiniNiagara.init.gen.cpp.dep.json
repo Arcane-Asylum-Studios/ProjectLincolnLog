@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\mainprojectlincolnlog\\plugins\\houdininiagara\\intermediate\\build\\win64\\unrealeditor\\inc\\houdininiagara\\uht\\houdininiagara.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\mainprojectlincolnlog\\intermediate\\build\\win64\\x64\\projectlincolnlogseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdininiagara\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdininiagara\\definitions.houdininiagara.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

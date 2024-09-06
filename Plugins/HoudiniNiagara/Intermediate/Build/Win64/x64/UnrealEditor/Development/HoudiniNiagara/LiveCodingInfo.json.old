@@ -1,0 +1,18 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HoudiniNiagara.cpp.obj": [
+			"HoudiniNiagara.init.gen.cpp.obj",
+			"HoudiniPointCache.gen.cpp.obj",
+			"NiagaraDataInterfaceHoudini.gen.cpp.obj",
+			"HoudiniNiagara.cpp.obj",
+			"HoudiniPointCache.cpp.obj",
+			"HoudiniPointCacheLoader.cpp.obj",
+			"HoudiniPointCacheLoaderBJSON.cpp.obj",
+			"HoudiniPointCacheLoaderCSV.cpp.obj",
+			"HoudiniPointCacheLoaderJSON.cpp.obj",
+			"HoudiniPointCacheLoaderJSONBase.cpp.obj",
+			"NiagaraDataInterfaceHoudini.cpp.obj"
+		]
+	}
+}
