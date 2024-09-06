@@ -270,6 +270,9 @@ public:
 	// cook folder. This function does not take the unreal_temp_folder attribute into account.
 	FString GetTemporaryCookFolderOrDefault() const;
 
+	// Returns true if this asset should try to start a session
+	virtual bool ShouldTryToStartFirstSession() const;
+
 	//------------------------------------------------------------------------------------------------
 	// Mutators
 	//------------------------------------------------------------------------------------------------
@@ -635,6 +638,9 @@ public:
 
 	UPROPERTY()
 	bool bLandscapeUseTempLayers;
+
+	UPROPERTY()
+	bool bEnableCurveEditing;
 
 	// Indicates whether or not this component should update the editor's UI
 	// This is to prevent successive calls of the function for the same HDAs 

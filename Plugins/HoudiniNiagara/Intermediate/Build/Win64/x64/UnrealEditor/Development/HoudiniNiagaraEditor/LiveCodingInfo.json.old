@@ -1,0 +1,20 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HoudiniNiagaraEditor.cpp.obj": [
+			"HoudiniNiagaraEditor.init.gen.cpp.obj",
+			"HoudiniPointCacheExporterBase.gen.cpp.obj",
+			"HoudiniPointCacheExporterHBJSON.gen.cpp.obj",
+			"HoudiniPointCacheExporterHCSV.gen.cpp.obj",
+			"HoudiniPointCacheExporterHJSON.gen.cpp.obj",
+			"HoudiniPointCacheFactory.gen.cpp.obj",
+			"HoudiniNiagaraEditor.cpp.obj",
+			"HoudiniPointCacheAssetActions.cpp.obj",
+			"HoudiniPointCacheExporterBase.cpp.obj",
+			"HoudiniPointCacheExporterHBJSON.cpp.obj",
+			"HoudiniPointCacheExporterHCSV.cpp.obj",
+			"HoudiniPointCacheExporterHJSON.cpp.obj",
+			"HoudiniPointCacheFactory.cpp.obj"
+		]
+	}
+}

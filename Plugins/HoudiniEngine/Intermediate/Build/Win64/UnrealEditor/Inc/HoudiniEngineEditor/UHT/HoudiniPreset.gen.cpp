@@ -27,6 +27,7 @@ HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetF
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetGeometryInputObject();
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetInputValue();
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetIntValues();
+HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues();
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetRampColorPoint();
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetRampColorValues();
 HOUDINIENGINEEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetRampFloatPoint();
@@ -636,6 +637,69 @@ UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetRampColorValues()
 	return Z_Registration_Info_UScriptStruct_HoudiniPresetRampColorValues.InnerSingleton;
 }
 // End ScriptStruct FHoudiniPresetRampColorValues
+
+// Begin ScriptStruct FHoudiniPresetMultiParmValues
+static_assert(std::is_polymorphic<FHoudiniPresetMultiParmValues>() == std::is_polymorphic<FHoudiniPresetBase>(), "USTRUCT FHoudiniPresetMultiParmValues cannot be polymorphic unless super FHoudiniPresetBase is polymorphic");
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues;
+class UScriptStruct* FHoudiniPresetMultiParmValues::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues, (UObject*)Z_Construct_UPackage__Script_HoudiniEngineEditor(), TEXT("HoudiniPresetMultiParmValues"));
+	}
+	return Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.OuterSingleton;
+}
+template<> HOUDINIENGINEEDITOR_API UScriptStruct* StaticStruct<FHoudiniPresetMultiParmValues>()
+{
+	return FHoudiniPresetMultiParmValues::StaticStruct();
+}
+struct Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Private/HoudiniPreset.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Count_MetaData[] = {
+		{ "Category", "Houdini Preset" },
+		{ "ModuleRelativePath", "Private/HoudiniPreset.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Count;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static void* NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FHoudiniPresetMultiParmValues>();
+	}
+	static const UECodeGen_Private::FStructParams StructParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::NewProp_Count = { "Count", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FHoudiniPresetMultiParmValues, Count), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Count_MetaData), NewProp_Count_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::NewProp_Count,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::StructParams = {
+	(UObject* (*)())Z_Construct_UPackage__Script_HoudiniEngineEditor,
+	Z_Construct_UScriptStruct_FHoudiniPresetBase,
+	&NewStructOps,
+	"HoudiniPresetMultiParmValues",
+	Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::PropPointers,
+	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::PropPointers),
+	sizeof(FHoudiniPresetMultiParmValues),
+	alignof(FHoudiniPresetMultiParmValues),
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	EStructFlags(0x00000001),
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::Struct_MetaDataParams)
+};
+UScriptStruct* Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues()
+{
+	if (!Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.InnerSingleton, Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::StructParams);
+	}
+	return Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues.InnerSingleton;
+}
+// End ScriptStruct FHoudiniPresetMultiParmValues
 
 // Begin ScriptStruct FHoudiniPresetGeometryInputObject
 static_assert(std::is_polymorphic<FHoudiniPresetGeometryInputObject>() == std::is_polymorphic<FHoudiniPresetBase>(), "USTRUCT FHoudiniPresetGeometryInputObject cannot be polymorphic unless super FHoudiniPresetBase is polymorphic");
@@ -1378,6 +1442,10 @@ struct Z_Construct_UClass_UHoudiniPreset_Statics
 		{ "Category", "Houdini Preset" },
 		{ "ModuleRelativePath", "Private/HoudiniPreset.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MultiParmParameters_MetaData[] = {
+		{ "Category", "Houdini Preset" },
+		{ "ModuleRelativePath", "Private/HoudiniPreset.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputParameters_MetaData[] = {
 		{ "Category", "Houdini Preset" },
 #if !UE_BUILD_SHIPPING
@@ -1517,6 +1585,9 @@ struct Z_Construct_UClass_UHoudiniPreset_Statics
 	static const UECodeGen_Private::FStructPropertyParams NewProp_RampColorParameters_ValueProp;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_RampColorParameters_Key_KeyProp;
 	static const UECodeGen_Private::FMapPropertyParams NewProp_RampColorParameters;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_MultiParmParameters_ValueProp;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_MultiParmParameters_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_MultiParmParameters;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_InputParameters_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_InputParameters;
 	static void NewProp_bApplyStaticMeshGenSettings_SetBit(void* Obj);
@@ -1666,6 +1737,9 @@ const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHoudiniPreset_St
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters_ValueProp = { "RampColorParameters", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FHoudiniPresetRampColorValues, METADATA_PARAMS(0, nullptr) }; // 2475701128
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters_Key_KeyProp = { "RampColorParameters_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters = { "RampColorParameters", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniPreset, RampColorParameters), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RampColorParameters_MetaData), NewProp_RampColorParameters_MetaData) }; // 2475701128
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters_ValueProp = { "MultiParmParameters", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues, METADATA_PARAMS(0, nullptr) }; // 3679852157
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters_Key_KeyProp = { "MultiParmParameters_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters = { "MultiParmParameters", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniPreset, MultiParmParameters), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MultiParmParameters_MetaData), NewProp_MultiParmParameters_MetaData) }; // 3679852157
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_InputParameters_Inner = { "InputParameters", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FHoudiniPresetInputValue, METADATA_PARAMS(0, nullptr) }; // 1536455861
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_InputParameters = { "InputParameters", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHoudiniPreset, InputParameters), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputParameters_MetaData), NewProp_InputParameters_MetaData) }; // 1536455861
 void Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_bApplyStaticMeshGenSettings_SetBit(void* Obj)
@@ -1750,6 +1824,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHoudiniP
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters_Key_KeyProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_RampColorParameters,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_MultiParmParameters,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_InputParameters_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_InputParameters,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHoudiniPreset_Statics::NewProp_bApplyStaticMeshGenSettings,
@@ -1802,7 +1879,7 @@ UHoudiniPreset::~UHoudiniPreset() {}
 // End Class UHoudiniPreset
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics
+struct Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EHoudiniPresetValueType_StaticEnum, TEXT("EHoudiniPresetValueType"), &Z_Registration_Info_UEnum_EHoudiniPresetValueType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3033526862U) },
@@ -1816,17 +1893,18 @@ struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source
 		{ FHoudiniPresetRampColorPoint::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetRampColorPoint_Statics::NewStructOps, TEXT("HoudiniPresetRampColorPoint"), &Z_Registration_Info_UScriptStruct_HoudiniPresetRampColorPoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetRampColorPoint), 699774777U) },
 		{ FHoudiniPresetRampFloatValues::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetRampFloatValues_Statics::NewStructOps, TEXT("HoudiniPresetRampFloatValues"), &Z_Registration_Info_UScriptStruct_HoudiniPresetRampFloatValues, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetRampFloatValues), 2659312203U) },
 		{ FHoudiniPresetRampColorValues::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetRampColorValues_Statics::NewStructOps, TEXT("HoudiniPresetRampColorValues"), &Z_Registration_Info_UScriptStruct_HoudiniPresetRampColorValues, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetRampColorValues), 2475701128U) },
+		{ FHoudiniPresetMultiParmValues::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetMultiParmValues_Statics::NewStructOps, TEXT("HoudiniPresetMultiParmValues"), &Z_Registration_Info_UScriptStruct_HoudiniPresetMultiParmValues, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetMultiParmValues), 3679852157U) },
 		{ FHoudiniPresetGeometryInputObject::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetGeometryInputObject_Statics::NewStructOps, TEXT("HoudiniPresetGeometryInputObject"), &Z_Registration_Info_UScriptStruct_HoudiniPresetGeometryInputObject, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetGeometryInputObject), 1904211695U) },
 		{ FHoudiniPresetCurveInputObject::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetCurveInputObject_Statics::NewStructOps, TEXT("HoudiniPresetCurveInputObject"), &Z_Registration_Info_UScriptStruct_HoudiniPresetCurveInputObject, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetCurveInputObject), 2216914907U) },
 		{ FHoudiniPresetInputValue::StaticStruct, Z_Construct_UScriptStruct_FHoudiniPresetInputValue_Statics::NewStructOps, TEXT("HoudiniPresetInputValue"), &Z_Registration_Info_UScriptStruct_HoudiniPresetInputValue, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHoudiniPresetInputValue), 1536455861U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UHoudiniPreset, UHoudiniPreset::StaticClass, TEXT("UHoudiniPreset"), &Z_Registration_Info_UClass_UHoudiniPreset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHoudiniPreset), 2336565418U) },
+		{ Z_Construct_UClass_UHoudiniPreset, UHoudiniPreset::StaticClass, TEXT("UHoudiniPreset"), &Z_Registration_Info_UClass_UHoudiniPreset, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHoudiniPreset), 9963907U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_2857606355(TEXT("/Script/HoudiniEngineEditor"),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::EnumInfo));
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_1793417258(TEXT("/Script/HoudiniEngineEditor"),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniPreset_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

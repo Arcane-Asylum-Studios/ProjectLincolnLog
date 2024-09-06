@@ -428,13 +428,7 @@ FHoudiniEngineManager::AutoStartFirstSessionIfNeeded(UHoudiniAssetComponent* InC
 		|| !InCurrentHAC)
 		return;
 
-	// Only try to start the default session if we have an "active" HAC
-	const EHoudiniAssetState CurrentState = InCurrentHAC->GetAssetState();
-	if (CurrentState == EHoudiniAssetState::NewHDA
-		|| CurrentState == EHoudiniAssetState::PreInstantiation
-		|| CurrentState == EHoudiniAssetState::Instantiating
-		|| CurrentState == EHoudiniAssetState::PreCook
-		|| CurrentState == EHoudiniAssetState::Cooking)
+	if(InCurrentHAC->ShouldTryToStartFirstSession())
 	{
 		FString StatusText = TEXT("Initializing Houdini Engine...");
 		FHoudiniEngine::Get().CreateTaskSlateNotification(FText::FromString(StatusText), true, 4.0f);
@@ -642,7 +636,7 @@ FHoudiniEngineManager::ProcessComponent(UHoudiniAssetComponent* HAC)
 			{
 				// Gather output nodes for the HAC
 				TArray<int32> OutputNodes;
-				FHoudiniEngineUtils::GatherAllAssetOutputs(HAC->GetAssetId(), HAC->bUseOutputNodes, HAC->bOutputTemplateGeos, OutputNodes);
+				FHoudiniEngineUtils::GatherAllAssetOutputs(HAC->GetAssetId(), HAC->bUseOutputNodes, HAC->bOutputTemplateGeos, HAC->bEnableCurveEditing, OutputNodes);
 				HAC->SetOutputNodeIds(OutputNodes);
 				
 				FGuid TaskGUID = HAC->GetHapiGUID();
@@ -734,12 +728,25 @@ FHoudiniEngineManager::ProcessComponent(UHoudiniAssetComponent* HAC)
 			// Update world inputs if we have any
 			FHoudiniInputTranslator::UpdateWorldInputs(HAC);
 
+			// Update our handles if needed
+			// This may modify parameters so we need to call this before NeedUpdate
+			FHoudiniHandleTranslator::UpdateHandlesIfNeeded(HAC);
+
 			// Do nothing unless the HAC has been updated
 			if (HAC->NeedUpdate())
 			{
 				HAC->bForceNeedUpdate = false;
+
 				// Update the HAC's state
-				HAC->SetAssetState(EHoudiniAssetState::PreCook);
+				// Cook for valid nodes - instantiate for invalid nodes
+				if (FHoudiniEngineUtils::IsHoudiniNodeValid(HAC->GetAssetId()))
+					HAC->SetAssetState(EHoudiniAssetState::PreCook);
+				else
+				{
+					// Mark as needcook first to make sure we preserve/upload all params/inputs
+					HAC->MarkAsNeedCook();
+					HAC->SetAssetState(EHoudiniAssetState::PreInstantiation);
+				}
 			}
 			else if (HAC->bCookOnTransformChange && HAC->bUploadTransformsToHoudiniEngine && HAC->bHasComponentTransformChanged)
 			{
@@ -1286,8 +1293,8 @@ FHoudiniEngineManager::PostCook(UHoudiniAssetComponent* HAC, const bool& bSucces
 		FHoudiniOutputTranslator::UpdateOutputs(HAC, ForceUpdate, bHasHoudiniStaticMeshOutput);
 		HAC->SetNoProxyMeshNextCookRequested(false);
 
-		// Handles have to be updated after parameters
-		FHoudiniHandleTranslator::UpdateHandles(HAC);  
+		// Handles have to be built after the parameters
+		FHoudiniHandleTranslator::BuildHandles(HAC);
 
 		// Clear the HasBeenLoaded flag
 		if (HAC->HasBeenLoaded())
