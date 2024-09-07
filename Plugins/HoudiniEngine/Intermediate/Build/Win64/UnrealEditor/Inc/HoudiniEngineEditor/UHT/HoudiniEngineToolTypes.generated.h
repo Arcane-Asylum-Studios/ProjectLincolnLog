@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINEEDITOR_HoudiniEngineToolTypes_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h_49_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h_49_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniToolDirectory_Statics; \
 	HOUDINIENGINEEDITOR_API static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINEEDITOR_API UScriptStruct* StaticStruct<struct FHoudiniToolDirectory>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h_94_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h_94_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniToolCategory_Statics; \
 	HOUDINIENGINEEDITOR_API static class UScriptStruct* StaticStruct();
 
@@ -29,7 +29,7 @@ template<> HOUDINIENGINEEDITOR_API UScriptStruct* StaticStruct<struct FHoudiniTo
 template<> HOUDINIENGINEEDITOR_API UScriptStruct* StaticStruct<struct FHoudiniToolCategory>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngineEditor_Private_HoudiniEngineToolTypes_h
 
 
 #define FOREACH_ENUM_EHOUDINITOOLCATEGORYTYPE(op) \

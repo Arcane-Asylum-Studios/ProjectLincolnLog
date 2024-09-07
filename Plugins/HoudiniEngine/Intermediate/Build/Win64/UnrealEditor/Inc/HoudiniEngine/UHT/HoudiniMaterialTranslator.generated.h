@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINE_HoudiniMaterialTranslator_generated_h
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h_93_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h_93_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniMaterialParameterValue_Statics; \
 	HOUDINIENGINE_API static class UScriptStruct* StaticStruct();
 
 
 template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniMaterialParameterValue>();
 
-#define FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h_134_GENERATED_BODY \
+#define FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h_134_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHoudiniMaterialInfo_Statics; \
 	static class UScriptStruct* StaticStruct();
 
@@ -29,7 +29,7 @@ template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniMaterial
 template<> HOUDINIENGINE_API UScriptStruct* StaticStruct<struct FHoudiniMaterialInfo>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h
+#define CURRENT_FILE_ID FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HoudiniMaterialTranslator_h
 
 
 #define FOREACH_ENUM_EHOUDINIUNREALMATERIALPARAMETERTYPE(op) \

@@ -1,9 +1,9 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\houdinimaterialtranslator.gen.cpp",
+        "Source": "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\houdinimaterialtranslator.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengine\\pch.houdiniengine.h.pch",
+        "PCH": "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengine\\pch.houdiniengine.h.pch",
         "Includes": [
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\generatedcppincludes.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\object.h",
@@ -103,17 +103,17 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\enumproperty.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\textproperty.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\fieldpathproperty.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengine\\private\\houdinimaterialtranslator.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengine\\public\\hapi\\hapi_common.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengine\\public\\hapi\\hapi_api.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinigeopartobject.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengineruntime\\public\\houdiniengineruntimecommon.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdiniengineruntimecommon.generated.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinigenericattribute.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdinigenericattribute.generated.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengine\\private\\houdinimaterialtranslator.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengine\\public\\hapi\\hapi_common.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengine\\public\\hapi\\hapi_api.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinigeopartobject.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengineruntime\\public\\houdiniengineruntimecommon.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdiniengineruntimecommon.generated.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinigenericattribute.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdinigenericattribute.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\scriptmacros.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\stack.h",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdinigeopartobject.generated.h",
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineruntime\\uht\\houdinigeopartobject.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\texturedefines.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\texturedefines.generated.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.36.32532\\include\\string",
@@ -122,7 +122,7 @@
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.36.32532\\include\\xpolymorphic_allocator.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.36.32532\\include\\__msvc_sanitizer_annotate_container.hpp",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.36.32532\\include\\cctype",
-            "d:\\github\\projectlincolnlogs\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\houdinimaterialtranslator.generated.h"
+            "d:\\github\\mainprojectlincolnlog\\plugins\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengine\\uht\\houdinimaterialtranslator.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

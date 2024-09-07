@@ -82,14 +82,14 @@ UHBspPointsGrid::~UHBspPointsGrid() {}
 // End Class UHBspPointsGrid
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics
+struct Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UHBspPointsGrid, UHBspPointsGrid::StaticClass, TEXT("UHBspPointsGrid"), &Z_Registration_Info_UClass_UHBspPointsGrid, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHBspPointsGrid), 4282462430U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_3454288510(TEXT("/Script/HoudiniEngine"),
-	Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_projectlincolnlogs_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_3454288510(TEXT("/Script/HoudiniEngine"),
+	Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MainProjectLincolnLog_Plugins_HoudiniEngine_Source_HoudiniEngine_Private_HBSPOps_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

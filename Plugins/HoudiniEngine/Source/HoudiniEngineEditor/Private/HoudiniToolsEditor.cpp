@@ -73,6 +73,7 @@
 #include "Serialization/JsonSerializer.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Layout/SUniformGridPanel.h"
+#include "HoudiniParameterTranslator.h"
 
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 1
 	#include "Subsystems/EditorAssetSubsystem.h"
@@ -2856,7 +2857,7 @@ void
 FHoudiniToolsEditor::ApplyPresetToHoudiniAssetComponent(
 	const UHoudiniPreset* Preset,
 	UHoudiniAssetComponent* HAC,
-	const bool bReselectSelectedActors)
+	bool bReselectSelectedActors)
 {
 	if (!IsValid(HAC) || !IsValid(Preset))
 	{
@@ -2914,13 +2915,60 @@ FHoudiniToolsEditor::ApplyPresetToHoudiniAssetComponent(
 	}
 
 	// Iterate over all the parameters and settings in the preset and apply it to the Houdini Asset Component.
+
+	// Apply all Multiparam parameters. Since multiparms may contain multiparms we need to perform a loop
+	// setting as many multiparms as we can, then updating parameters, then setting the remaining multiparams
+	// again, and repeat. Until we end up with no multiparams remaining or nothing changed on the last
+	// parameter update.
+
+	TSet<FString> UnprocessedMultiParms;
 	
+	Preset->MultiParmParameters.GetKeys(UnprocessedMultiParms);
+
+	while(!UnprocessedMultiParms.IsEmpty())
+	{
+		// Create a temp array of all param names we haven't processed yet. Do this so we can modify UnprocessedMultiParms
+		// in the loop below.
+		TArray<FString> CurrentParms;
+		for (const FString& Element : UnprocessedMultiParms)
+			CurrentParms.Add(Element);
+
+		bool bProcessedAtLeastOne = false;
+
+		// now loop over all parms we haven't process and try to set them. If we can set them, remove them from the
+		// unprocessed set.
+		for (FString& ParmName : CurrentParms)
+		{
+			const FHoudiniPresetMultiParmValues& ParmValues = Preset->MultiParmParameters[ParmName];
+
+			UHoudiniParameter* Parm = HAC->FindParameterByName(ParmName);
+			if (!IsValid(Parm))
+				continue;
+
+			FHoudiniPresetHelpers::ApplyPresetParameterValues(ParmValues, Cast<UHoudiniParameterMultiParm>(Parm));
+			UnprocessedMultiParms.Remove(ParmName);
+			bProcessedAtLeastOne = true;
+		}
+		if (!bProcessedAtLeastOne)
+			break;
+
+		FHoudiniParameterTranslator::UploadChangedParameters(HAC);
+		FHoudiniParameterTranslator::UpdateParameters(HAC);
+	}
+
+
+	if (Preset->MultiParmParameters.Num() > 0)
+	{
+		FHoudiniParameterTranslator::UploadChangedParameters(HAC);
+		FHoudiniParameterTranslator::UpdateParameters(HAC);
+	}
+
 	// Apply all the Int parameters
 	for( const auto& Entry : Preset->IntParameters )
 	{
 		const FString& ParmName = Entry.Key;
 		const FHoudiniPresetIntValues& ParmValues = Entry.Value;
-
+		
 		UHoudiniParameter* Parm = HAC->FindParameterByName( ParmName );
 		if (!IsValid(Parm))
 		{

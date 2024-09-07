@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ToolkitSteamworks.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GitHub\MainProjectLincolnLog\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Module.ToolkitSteamworks.1.cpp.obj"
+"D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Module.ToolkitSteamworks.2.cpp.obj"
+"D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Module.ToolkitSteamworks.3.cpp.obj"
+"D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\Default.rc2.res"
+/OUT:"D:\GitHub\MainProjectLincolnLog\Plugins\ToolkitSteamworks\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolkitSteamworks\UnrealEditor-ToolkitSteamworks.lib"
