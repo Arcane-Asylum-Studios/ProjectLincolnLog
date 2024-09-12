@@ -2,13 +2,12 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ToolkitSteamworks.1.cpp.obj": [
+			"AchievementDataAsset.cpp.obj",
 			"AchievementDataAsset.gen.cpp.obj",
 			"CreateLobbyAsyncTask.gen.cpp.obj",
 			"DownloadableContentDataAsset.gen.cpp.obj",
 			"EnterLobbyAsyncTask.gen.cpp.obj",
-			"HeathenTools.gen.cpp.obj"
-		],
-		"Module.ToolkitSteamworks.2.cpp.obj": [
+			"HeathenTools.gen.cpp.obj",
 			"InventoryItemDataAsset.gen.cpp.obj",
 			"LeaderboardDataAsset.gen.cpp.obj",
 			"QuickMatchLobbyAsyncTask.gen.cpp.obj",
@@ -18,8 +17,7 @@
 			"ToolkitSteamworks.init.gen.cpp.obj",
 			"ToolkitSteamworksBPLibrary.gen.cpp.obj"
 		],
-		"Module.ToolkitSteamworks.3.cpp.obj": [
-			"AchievementDataAsset.cpp.obj",
+		"Module.ToolkitSteamworks.2.cpp.obj": [
 			"CreateLobbyAsyncTask.cpp.obj",
 			"DownloadableContentDataAsset.cpp.obj",
 			"EnterLobbyAsyncTask.cpp.obj",
