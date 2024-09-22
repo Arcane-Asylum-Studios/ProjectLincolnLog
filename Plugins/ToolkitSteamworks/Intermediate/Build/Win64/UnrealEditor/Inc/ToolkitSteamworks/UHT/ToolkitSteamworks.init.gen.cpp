@@ -189,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeToolkitSteamworks_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x3BB7EB49,
+				0xE66FD71C,
 				0x36493CDE,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -197,5 +197,5 @@ void EmptyLinkFunctionForGeneratedCodeToolkitSteamworks_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_ToolkitSteamworks.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToolkitSteamworks(Z_Construct_UPackage__Script_ToolkitSteamworks, TEXT("/Script/ToolkitSteamworks"), Z_Registration_Info_UPackage__Script_ToolkitSteamworks, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3BB7EB49, 0x36493CDE));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToolkitSteamworks(Z_Construct_UPackage__Script_ToolkitSteamworks, TEXT("/Script/ToolkitSteamworks"), Z_Registration_Info_UPackage__Script_ToolkitSteamworks, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xE66FD71C, 0x36493CDE));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
