@@ -12,6 +12,7 @@
 !/Source/**
 !/Config/**
 !/Plugins/**
+Plugins/*/Intermediate/**
 
 # Ignore binaries and temporary files inside plugin folders
 Plugins/*/Binaries/**
