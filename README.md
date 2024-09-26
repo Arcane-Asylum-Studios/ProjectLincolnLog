@@ -1,5 +1,5 @@
          -Project Lead/Programmer: Bryce
          -Designer: Lore
-         -Level Designer: Seth
+         -Level Designer/Programmer: Seth
          -Artist: Kaitlyn
-         -Technical Artist: Eli
+         -Technical Artist: 
