@@ -67,7 +67,7 @@
 		},
 		{
 			"Name": "HoudiniEngine",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "ToolkitSteamworks",
@@ -75,12 +75,13 @@
 			"MarketplaceURL": "https://www.unrealengine.com/marketplace/product/ad658ddf5c434478acb95f9091ea279c"
 		},
 		{
-			"Name": "HoudiniLiveLink",
-			"Enabled": false
-		},
-		{
 			"Name": "Water",
 			"Enabled": true
+		},
+		{
+			"Name": "HoudiniNiagara",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/79d2dd58387c4696a0f3458275f739d6"
 		}
 	],
 	"TargetPlatforms": [
