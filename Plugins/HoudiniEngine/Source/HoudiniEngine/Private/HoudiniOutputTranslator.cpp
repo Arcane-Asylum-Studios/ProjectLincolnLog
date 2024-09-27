@@ -90,6 +90,8 @@ FHoudiniOutputTranslator::UpdateOutputs(
 	const bool& bInForceUpdate,
 	bool& bOutHasHoudiniStaticMeshOutput)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(FHoudiniOutputTranslator::UpdateOutputs);
+
 	if (!IsValid(HAC))
 		return false;
 
@@ -1961,23 +1963,30 @@ FHoudiniOutputTranslator::BuildAllOutputs(
 					FHoudiniApi::VolumeInfo_Init(&CurrentHapiVolumeInfo);
 
 					bool bVolumeValid = true;
-					if (HAPI_RESULT_SUCCESS != FHoudiniApi::GetVolumeInfo(
+
+					HAPI_Result Result = FHoudiniApi::GetVolumeInfo(
 						FHoudiniEngine::Get().GetSession(),
 						CurrentHapiGeoInfo.nodeId, CurrentHapiPartInfo.id,
-						&CurrentHapiVolumeInfo))
+						&CurrentHapiVolumeInfo);
+
+					if (HAPI_RESULT_SUCCESS != Result)
 					{
+						HOUDINI_LOG_ERROR(TEXT("Failed to get VolumeInfo (%d)"), *FHoudiniEngineUtils::GetErrorDescription(Result));
 						bVolumeValid = false;
 					}
 					else if (CurrentHapiVolumeInfo.tupleSize != 1)
 					{
+						HOUDINI_LOG_ERROR(TEXT("Invalid tuple size (%d)"), CurrentHapiVolumeInfo.tupleSize);
 						bVolumeValid = false;
 					}
 					else if (CurrentHapiVolumeInfo.zLength != 1)
 					{
+						HOUDINI_LOG_ERROR(TEXT("Invalid zlength (%d)"), CurrentHapiVolumeInfo.zLength);
 						bVolumeValid = false;
 					}
 					else if (CurrentHapiVolumeInfo.storage != HAPI_STORAGETYPE_FLOAT)
 					{
+						HOUDINI_LOG_ERROR(TEXT("Invalid storage (%d)"), CurrentHapiVolumeInfo.storage);
 						bVolumeValid = false;
 					}
 
@@ -2609,6 +2618,8 @@ FHoudiniOutputTranslator::ClearAndRemoveOutputs(UHoudiniAssetComponent *InHAC, T
 void 
 FHoudiniOutputTranslator::ClearOutput(UHoudiniOutput* Output) 
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(FHoudiniOutputTranslator::ClearOutput);
+
 	switch (Output->GetType()) 
 	{
 		case EHoudiniOutputType::Landscape:

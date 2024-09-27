@@ -4161,7 +4161,7 @@ void FNiagaraDataInterfaceProxyHoudini::UpdateFunctionIndexToAttributeIndexBuffe
 		RHIUnlockBuffer(FunctionIndexToAttributeIndexGPUBuffer.Buffer);
 #else
 		FRHICommandListImmediate& RHICmdList = FRHICommandListImmediate::Get();
-		FunctionIndexToAttributeIndexGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferIndexToAttributeIndex"), sizeof(int32), NumFunctions, EPixelFormat::PF_R32_SINT, BUF_Static);
+		FunctionIndexToAttributeIndexGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferIndexToAttributeIndex"), sizeof(int32), NumFunctions, EPixelFormat::PF_R32_SINT, ERHIAccess::SRVCompute, BUF_Static);
 		int32* BufferData = static_cast<int32*>(RHICmdList.LockBuffer(FunctionIndexToAttributeIndexGPUBuffer.Buffer, 0, BufferSize, EResourceLockMode::RLM_WriteOnly));
 		FPlatformMemory::Memcpy(BufferData, FunctionIndexToAttributeIndex.GetData(), BufferSize);
 		RHICmdList.UnlockBuffer(FunctionIndexToAttributeIndexGPUBuffer.Buffer);

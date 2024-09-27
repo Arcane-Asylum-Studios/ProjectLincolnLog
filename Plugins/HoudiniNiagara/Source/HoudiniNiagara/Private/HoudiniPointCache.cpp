@@ -1327,7 +1327,7 @@ void FHoudiniPointCacheResource::InitRHI()
 		int32 NumElements = CachedData->FloatData.Num();
 		FloatValuesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		FloatValuesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferFloat"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
+		FloatValuesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferFloat"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		FloatValuesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferFloat"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
 #endif
@@ -1354,7 +1354,7 @@ void FHoudiniPointCacheResource::InitRHI()
 
 		SpecialAttributeIndexesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		SpecialAttributeIndexesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferSpecialAttributeIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
+		SpecialAttributeIndexesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferSpecialAttributeIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		SpecialAttributeIndexesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferSpecialAttributeIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
 #endif
@@ -1381,7 +1381,7 @@ void FHoudiniPointCacheResource::InitRHI()
 
 		SpawnTimesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		SpawnTimesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferSpawnTimes"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
+		SpawnTimesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferSpawnTimes"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		SpawnTimesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferSpawnTimes"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
 #endif
@@ -1407,7 +1407,7 @@ void FHoudiniPointCacheResource::InitRHI()
 
 		LifeValuesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		LifeValuesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferLifeValues"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
+		LifeValuesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferLifeValues"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		LifeValuesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferLifeValues"), sizeof(float), NumElements, EPixelFormat::PF_R32_FLOAT, BUF_Static);
 #endif
@@ -1434,7 +1434,7 @@ void FHoudiniPointCacheResource::InitRHI()
 
 		PointTypesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		PointTypesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferPointTypes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
+		PointTypesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferPointTypes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		PointTypesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferPointTypes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
 #endif
@@ -1461,7 +1461,7 @@ void FHoudiniPointCacheResource::InitRHI()
 
 		PointValueIndexesGPUBuffer.Release();
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3
-		PointValueIndexesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferPointValuesIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
+		PointValueIndexesGPUBuffer.Initialize(RHICmdList, TEXT("HoudiniGPUBufferPointValuesIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, ERHIAccess::SRVCompute, BUF_Static);
 #else
 		PointValueIndexesGPUBuffer.Initialize(TEXT("HoudiniGPUBufferPointValuesIndexes"), sizeof(int32), NumElements, EPixelFormat::PF_R32_SINT, BUF_Static);
 #endif
