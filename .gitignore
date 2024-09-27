@@ -12,12 +12,20 @@
 !/Source/**
 !/Config/**
 !/Plugins/**
+Plugins/*/Intermediate/**
+
+# Ignore binaries and temporary files inside plugin folders
+Plugins/*/Binaries/**
+Plugins/*/Intermediate/**
+Plugins/*/DerivedDataCache/**
+Plugins/*/Saved/**
 
 # Only allow .uasset and .umap files from /Content dir.
 # They're tracked by git-lfs, don't forget to track other
 # files if adding them here.
 !/Content/**/*.uasset
 !/Content/**/*.umap
+!/Content/**/*.fbx
 
 # Allow any files from /RawContent dir.
 # Any file in /RawContent dir will be managed by git lfs.
