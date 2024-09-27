@@ -100,6 +100,8 @@ FHoudiniMeshTranslator::CreateAllMeshesAndComponentsFromHoudiniOutput(
 	bool bInTreatExistingMaterialsAsUpToDate,
 	bool bInDestroyProxies)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(FHoudiniMeshTranslator::CreateAllMeshesAndComponentsFromHoudiniOutput);
+
 	if (!IsValid(InOutput))
 		return false;
 
@@ -172,6 +174,8 @@ FHoudiniMeshTranslator::CreateOrUpdateAllComponents(
 	bool bInDestroyProxies,
 	bool bInApplyGenericProperties)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(FHoudiniMeshTranslator::CreateOrUpdateAllComponents);
+
 	if (!IsValid(InOutput))
 		return false;
 
@@ -700,6 +704,8 @@ FHoudiniMeshTranslator::CreateStaticMeshFromHoudiniGeoPartObject(
 	const FMeshBuildSettings& InSMBuildSettings,
 	bool bInTreatExistingMaterialsAsUpToDate)
 {
+	TRACE_CPUPROFILER_EVENT_SCOPE(FHoudiniMeshTranslator::CreateStaticMeshFromHoudiniGeoPartObject);
+
 	// If we're not forcing the rebuild
 	// No need to recreate something that hasn't changed
 	if (!InForceRebuild && !InHGPO.bHasGeoChanged && !InHGPO.bHasPartChanged && InOutputObjects.Num() > 0)
@@ -708,8 +714,6 @@ FHoudiniMeshTranslator::CreateStaticMeshFromHoudiniGeoPartObject(
 		OutOutputObjects = InOutputObjects;
 		return true;
 	}
-
-
 
 	// Create a new mesh translator to handle the output data creation
 	FHoudiniMeshTranslator CurrentTranslator;
@@ -1523,19 +1527,8 @@ FHoudiniMeshTranslator::UpdatePartLODScreensizeIfNeeded()
 		return true;
 
 	FHoudiniHapiAccessor Accessor(HGPO.GeoInfo.NodeId, HGPO.PartInfo.PartId, HAPI_UNREAL_ATTRIB_LOD_SCREENSIZE);
-
 	bool Success = Accessor.GetAttributeData(HAPI_ATTROWNER_INVALID, PartLODScreensize);
-
-	if (!Success)
-	{
-		// Error retrieving FaceSmoothing values.
-		HOUDINI_LOG_WARNING(
-			TEXT("Creating Static Meshes: Object [%d %s], Geo [%d], Part [%d %s], unable to retrieve LOD screensizes"),
-			HGPO.ObjectId, *HGPO.ObjectName, HGPO.GeoId, HGPO.PartId, *HGPO.PartName);
-		return false;
-	}
-
-	return true;
+	return Success;
 }
 
 
@@ -1846,11 +1839,13 @@ FHoudiniMeshTranslator::CreateStaticMesh_MeshDescription()
 	///////////////////////////////////////////////////////////////////////
 	// THIS FUNCTION IS DEPRECATED AND WILL REMOVED IN THE NEXT RELEASE.
 	///////////////////////////////////////////////////////////////////////
-	
+
 	// Time limit for processing
 	bDoTiming = CVarHoudiniEngineMeshBuildTimer.GetValueOnAnyThread() != 0.0;
 
 	double time_start = FPlatformTime::Seconds();
+
+	bool bIsGammaCorrectionDisabled = IsGammaCorrectionDisabled(HGPO.GeoId, HGPO.PartId);
 
 	// Keep a copy of the initial package params, since PackageParams is modified in place when resolving attributes
 	FHoudiniPackageParams InitialPackageParams = PackageParams;
@@ -2869,7 +2864,15 @@ FHoudiniMeshTranslator::CreateStaticMesh_MeshDescription()
 					{
 						Color.A = FMath::Clamp(SplitColors[SplitIndex * AttribInfoColors.tupleSize + 3], 0.0f, 1.0f);
 					}
-					VertexInstanceColors[VertexInstanceID] = FVector4f(Color);
+
+					if (bIsGammaCorrectionDisabled)
+					{
+						// Mesh Description colors are always gamma corrected by Unreal. So we have to reverse the correction
+						// if this flag is enabled.
+						Color =  FLinearColor::FromSRGBColor(Color.ToFColor(false));
+					}
+					FVector4f VertexColor = FVector4f(Color);
+					VertexInstanceColors[VertexInstanceID] = VertexColor;
 
 					// UVs
 					for (int32 UVIndex = 0; UVIndex < SplitUVSets.Num(); UVIndex++)
@@ -3091,22 +3094,6 @@ FHoudiniMeshTranslator::CreateStaticMesh_MeshDescription()
 			continue;
 		
 		const FHoudiniOutputObjectIdentifier& CurrentObjId = Current.Key;
-		// Update property attributes on the SM
-		TArray<FHoudiniGenericAttribute> PropertyAttributes;
-		if (FHoudiniEngineUtils::GetGenericPropertiesAttributes(
-			CurrentObjId.GeoId,
-			CurrentObjId.PartId,
-			true,
-			CurrentObjId.PrimitiveIndex,
-			INDEX_NONE,
-			CurrentObjId.PointIndex,
-			PropertyAttributes))
-		{
-			// Defer post edit change calls until after all property values have been set, since the static mesh
-			// build function is called from PostEditChangeProperty.
-			constexpr bool bDeferPostEditChangePropertyCalls = true;
-			FHoudiniEngineUtils::UpdateGenericPropertiesAttributes(SM, PropertyAttributes, 0, bDeferPostEditChangePropertyCalls);
-		}
 
 		UBodySetup * BodySetup = SM->GetBodySetup();
 		if (!BodySetup)
@@ -3215,6 +3202,22 @@ FHoudiniMeshTranslator::CreateStaticMesh_MeshDescription()
 			MainBodySetup->CollisionTraceFlag = MainStaticMeshCTF;
 		}
 
+		// Update property attributes on the SM
+		TArray<FHoudiniGenericAttribute> PropertyAttributes;
+		if (FHoudiniEngineUtils::GetGenericPropertiesAttributes(
+			CurrentObjId.GeoId,
+			CurrentObjId.PartId,
+			true,
+			CurrentObjId.PrimitiveIndex,
+			INDEX_NONE,
+			CurrentObjId.PointIndex,
+			PropertyAttributes))
+		{
+			// Defer post edit change calls until after all property values have been set, since the static mesh
+			// build function is called from PostEditChangeProperty.
+			constexpr bool bDeferPostEditChangePropertyCalls = true;
+			FHoudiniEngineUtils::UpdateGenericPropertiesAttributes(SM, PropertyAttributes, 0, bDeferPostEditChangePropertyCalls);
+		}
 
 		if (bDoTiming)
 		{
@@ -3295,6 +3298,8 @@ FHoudiniMeshTranslator::CreateHoudiniStaticMesh()
 
 	// Keep a copy of the initial package params, since PackageParams is modified in place when resolving attributes
 	FHoudiniPackageParams InitialPackageParams = PackageParams;
+
+	bool bIsGammaCorrectionDisabled = IsGammaCorrectionDisabled(HGPO.GeoId, HGPO.PartId);
 
 	// Start by updating the vertex list
 	if (!UpdatePartVertexList())
@@ -3898,7 +3903,13 @@ FHoudiniMeshTranslator::CreateHoudiniStaticMesh()
 							{
 								VertexLinearColor.A = 1.0f;
 							}
-							const FColor VertexColor = VertexLinearColor.ToFColor(false);
+
+							FColor VertexColor = VertexLinearColor.ToFColor(false);
+
+							// If Gamma correction is disabled, de-convert the color. Since SetTriangleVertexColor() will apply gamma.
+							if (bIsGammaCorrectionDisabled)
+								VertexColor = FLinearColor::FromSRGBColor(VertexColor).ToFColor(false);
+
 							FoundStaticMesh->SetTriangleVertexColor(TriangleIdx, TriWindingIndex[ElementIdx], VertexColor);
 						}
 					}
@@ -8539,6 +8550,18 @@ FHoudiniMeshTranslator::ProcessMaterialsForHSM(
 		FoundStaticMaterials.Empty();
 		FoundStaticMaterials.Add(FStaticMaterial(MaterialInterface));
 	}
+}
+
+
+bool FHoudiniMeshTranslator::IsGammaCorrectionDisabled(HAPI_NodeId  NodeId, HAPI_PartId PartId)
+{
+	FHoudiniHapiAccessor Accessor(NodeId, PartId, HAPI_UNREAL_ATTRIB_DISABLE_GAMMA_CORRECTION);
+	TArray<int> Values;
+	Accessor.GetAttributeData(HAPI_ATTROWNER_INVALID, Values);
+	if (Values.IsEmpty())
+		return false;
+
+	return Values[0] != 0;
 }
 
 #undef LOCTEXT_NAMESPACE
