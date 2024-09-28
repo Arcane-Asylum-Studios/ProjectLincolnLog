@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\source\\houdiniengineeditor\\private\\houdinipublicapiobjectbase.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengineeditor\\pch.houdiniengineeditor.h.pch",
+        "Includes": [
+            "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\source\\houdiniengineeditor\\public\\houdinipublicapiobjectbase.h",
+            "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\intermediate\\build\\win64\\unrealeditor\\inc\\houdiniengineeditor\\uht\\houdinipublicapiobjectbase.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

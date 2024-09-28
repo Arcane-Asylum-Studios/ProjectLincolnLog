@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HoudiniLiveLink.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GitHub\ProjectLincolnLog\Intermediate\Build\Win64\x64\ProjectLincolnLogsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"D:\GitHub\ProjectLincolnLog\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\Module.HoudiniLiveLink.cpp.obj"
+"D:\GitHub\ProjectLincolnLog\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\Default.rc2.res"
+/OUT:"D:\GitHub\ProjectLincolnLog\Plugins\HoudiniLiveLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\HoudiniLiveLink\UnrealEditor-HoudiniLiveLink.lib"

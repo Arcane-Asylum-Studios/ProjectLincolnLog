@@ -1,0 +1,116 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HoudiniEngineEditor.1.cpp.obj": [
+			"HoudiniAssetActorFactory.gen.cpp.obj",
+			"HoudiniAssetFactory.gen.cpp.obj",
+			"HoudiniEditorAssetStateSubsystem.gen.cpp.obj",
+			"HoudiniEditorNodeSyncSubsystem.gen.cpp.obj",
+			"HoudiniEditorTestUtils.gen.cpp.obj",
+			"HoudiniEngineBakeUtils.gen.cpp.obj",
+			"HoudiniEngineEditor.init.gen.cpp.obj",
+			"HoudiniEngineToolTypes.gen.cpp.obj",
+			"HoudiniGeoFactory.gen.cpp.obj",
+			"HoudiniPreset.gen.cpp.obj",
+			"HoudiniPresetActorFactory.gen.cpp.obj",
+			"HoudiniPresetFactory.gen.cpp.obj",
+			"HoudiniPublicAPI.gen.cpp.obj",
+			"HoudiniPublicAPIAssetWrapper.gen.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.2.cpp.obj": [
+			"HoudiniPublicAPIBlueprintLib.gen.cpp.obj",
+			"HoudiniPublicAPIInputTypes.gen.cpp.obj",
+			"HoudiniPublicAPIObjectBase.gen.cpp.obj",
+			"HoudiniPublicAPIOutputTypes.gen.cpp.obj",
+			"HoudiniPublicAPIProcessHDANode.gen.cpp.obj",
+			"HoudiniRampEditorWindowSubsystem.gen.cpp.obj",
+			"HoudiniToolsEditorUISubsystem.gen.cpp.obj",
+			"HoudiniToolsPackageAssetFactory.gen.cpp.obj",
+			"HoudiniToolTypesEditor.gen.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.3.cpp.obj": [
+			"SHoudiniToolsPanel.gen.cpp.obj",
+			"AssetTypeActions_HoudiniAsset.cpp.obj",
+			"AssetTypeActions_HoudiniPreset.cpp.obj",
+			"AssetTypeActions_HoudiniToolsPackageAsset.cpp.obj",
+			"HoudiniAssetActorFactory.cpp.obj",
+			"HoudiniAssetBroker.cpp.obj",
+			"HoudiniAssetComponentDetails.cpp.obj",
+			"HoudiniAssetFactory.cpp.obj",
+			"HoudiniBakeLevelInstanceUtils.cpp.obj",
+			"HoudiniEditorAssetStateSubsystem.cpp.obj",
+			"HoudiniEditorNodeSyncSubsystem.cpp.obj",
+			"HoudiniBakeLandscape.cpp.obj",
+			"HoudiniEngineBakeUtils.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.4.cpp.obj": [
+			"HoudiniEngineEditorUtils.cpp.obj",
+			"HoudiniEngineStyle.cpp.obj",
+			"HoudiniGeoFactory.cpp.obj",
+			"HoudiniInputDetails.cpp.obj",
+			"HoudiniEngineCommands.cpp.obj",
+			"HoudiniEngineDetails.cpp.obj",
+			"HoudiniEngineEditor.cpp.obj",
+			"HoudiniHandleComponentVisualizer.cpp.obj",
+			"HoudiniHandleDetails.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.5.cpp.obj": [
+			"HoudiniOutputDetails.cpp.obj",
+			"HoudiniPDGDetails.cpp.obj",
+			"HoudiniParameterDetails.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.6.cpp.obj": [
+			"HoudiniPresetActorFactory.cpp.obj",
+			"HoudiniPublicAPI.cpp.obj",
+			"HoudiniPublicAPIBlueprintLib.cpp.obj",
+			"HoudiniPublicAPIInputTypes.cpp.obj",
+			"HoudiniPublicAPIObjectBase.cpp.obj",
+			"HoudiniPublicAPIOutputTypes.cpp.obj",
+			"HoudiniPublicAPIProcessHDANode.cpp.obj",
+			"HoudiniRampEditorWindowSubsystem.cpp.obj",
+			"HoudiniRuntimeSettingsDetails.cpp.obj",
+			"HoudiniPreset.cpp.obj",
+			"HoudiniPublicAPIAssetWrapper.cpp.obj",
+			"HoudiniSplineComponentVisualizer.cpp.obj",
+			"HoudiniToolsEditor.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.7.cpp.obj": [
+			"HoudiniToolsEditorUISubsystem.cpp.obj",
+			"HoudiniToolTypesEditor.cpp.obj",
+			"SHoudiniColorRamp.cpp.obj",
+			"SHoudiniFloatRamp.cpp.obj",
+			"SHoudiniNodeSyncPanel.cpp.obj",
+			"SHoudiniNodeTreeView.cpp.obj",
+			"SHoudiniToolsPanel.cpp.obj",
+			"SNewFilePathPicker.cpp.obj",
+			"SSelectFolderPathDialog.cpp.obj",
+			"SSelectHoudiniPathDialog.cpp.obj",
+			"HoudiniEditorColliderTests.cpp.obj",
+			"HoudiniEditorEquivalenceUtils.cpp.obj",
+			"SHoudiniPresets.cpp.obj"
+		],
+		"Module.HoudiniEngineEditor.8.cpp.obj": [
+			"HoudiniEditorHeightfieldTests.cpp.obj",
+			"HoudiniEditorInputTests.cpp.obj",
+			"HoudiniEditorInstancerTests.cpp.obj",
+			"HoudiniEditorMaterialTests.cpp.obj",
+			"HoudiniEditorMeshTests.cpp.obj",
+			"HoudiniEditorParametersTests.cpp.obj",
+			"HoudiniEditorTemplatedGeoTests.cpp.obj",
+			"HoudiniEditorTestBaking.cpp.obj",
+			"HoudiniEditorTestDataLayers.cpp.obj",
+			"HoudiniEditorTestGeometryCollections.cpp.obj",
+			"HoudiniEditorTestInstances.cpp.obj",
+			"HoudiniEditorTestLandscapes.cpp.obj",
+			"HoudiniEditorTestOutputs.cpp.obj",
+			"HoudiniEditorTestProxyMesh.cpp.obj",
+			"HoudiniEditorTests.cpp.obj",
+			"HoudiniEditorUnitTestMeshUtils.cpp.obj",
+			"HoudiniEditorTestLandscapeSplines.cpp.obj",
+			"HoudiniEditorTestMeshGroups.cpp.obj",
+			"HoudiniEditorTestSkeletalMesh.cpp.obj",
+			"HoudiniEditorTestUtils.cpp.obj",
+			"HoudiniEditorUnitTestUtils.cpp.obj"
+		]
+	}
+}
