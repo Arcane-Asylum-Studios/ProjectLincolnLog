@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinipluginserializationversion.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdiniengineruntime\\pch.houdiniengineruntime.h.pch",
+        "Includes": [
+            "d:\\github\\projectlincolnlog\\plugins\\runtime\\houdiniengine\\source\\houdiniengineruntime\\private\\houdinipluginserializationversion.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\serialization\\customversion.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HoudiniLiveLink.cpp.obj": [
+			"HoudiniLiveLink.init.gen.cpp.obj",
+			"HoudiniLiveLinkSourceFactory.gen.cpp.obj",
+			"HoudiniLiveLink.cpp.obj",
+			"HoudiniLiveLinkSource.cpp.obj",
+			"HoudiniLiveLinkSourceFactory.cpp.obj",
+			"SHoudiniLiveLinkSourceFactory.cpp.obj"
+		]
+	}
+}
