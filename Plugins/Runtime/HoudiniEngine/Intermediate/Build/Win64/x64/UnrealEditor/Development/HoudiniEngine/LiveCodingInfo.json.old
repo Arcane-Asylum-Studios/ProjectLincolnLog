@@ -1,0 +1,92 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HoudiniEngine.1.cpp.obj": [
+			"HBSPOps.gen.cpp.obj",
+			"HCsgUtils.gen.cpp.obj",
+			"HoudiniEngine.gen.cpp.obj",
+			"HoudiniEngine.init.gen.cpp.obj",
+			"HoudiniEngineTask.gen.cpp.obj",
+			"HoudiniEngineTaskInfo.gen.cpp.obj",
+			"HoudiniGeoImportCommandlet.gen.cpp.obj",
+			"HoudiniGeoImporter.gen.cpp.obj",
+			"HoudiniInstanceTranslator.gen.cpp.obj",
+			"HoudiniMaterialTranslator.gen.cpp.obj",
+			"HoudiniMeshTranslator.gen.cpp.obj",
+			"HoudiniPackageParams.gen.cpp.obj",
+			"HoudiniPDGImporterMessages.gen.cpp.obj",
+			"HoudiniStringResolver.gen.cpp.obj",
+			"GeometryToolsEngine.cpp.obj",
+			"HBSPOps.cpp.obj",
+			"HCsgUtils.cpp.obj",
+			"HoudiniApi.cpp.obj",
+			"HoudiniAnimationTranslator.cpp.obj"
+		],
+		"Module.HoudiniEngine.2.cpp.obj": [
+			"HoudiniDataLayerUtils.cpp.obj",
+			"HoudiniEngineOutputStats.cpp.obj",
+			"HoudiniEngineScheduler.cpp.obj",
+			"HoudiniEngineTask.cpp.obj",
+			"HoudiniEngineTaskInfo.cpp.obj",
+			"HoudiniEngineTimers.cpp.obj",
+			"HoudiniDataTableTranslator.cpp.obj",
+			"HoudiniEngine.cpp.obj",
+			"HoudiniEngineAttributes.cpp.obj",
+			"HoudiniEngineManager.cpp.obj",
+			"HoudiniEngineString.cpp.obj",
+			"HoudiniEngineUtils.cpp.obj"
+		],
+		"Module.HoudiniEngine.3.cpp.obj": [
+			"HoudiniGeoImportCommandlet.cpp.obj",
+			"HoudiniFoliageTools.cpp.obj",
+			"HoudiniGeoImporter.cpp.obj",
+			"HoudiniGeometryCollectionTranslator.cpp.obj",
+			"HoudiniHandleTranslator.cpp.obj",
+			"HoudiniHLODLayerUtils.cpp.obj",
+			"HoudiniInputTranslator.cpp.obj",
+			"HoudiniInstanceTranslator.cpp.obj"
+		],
+		"Module.HoudiniEngine.4.cpp.obj": [
+			"HoudiniMeshUtils.cpp.obj",
+			"HoudiniLandscapeSplineTranslator.cpp.obj",
+			"HoudiniLandscapeTranslator.cpp.obj",
+			"HoudiniLandscapeUtils.cpp.obj",
+			"HoudiniLevelInstanceUtils.cpp.obj",
+			"HoudiniMaterialTranslator.cpp.obj",
+			"HoudiniMeshTranslator.cpp.obj"
+		],
+		"Module.HoudiniEngine.5.cpp.obj": [
+			"HoudiniPackageParams.cpp.obj",
+			"HoudiniPDGImporterMessages.cpp.obj",
+			"HoudiniPDGTranslator.cpp.obj",
+			"HoudiniOutputTranslator.cpp.obj",
+			"HoudiniParameterTranslator.cpp.obj",
+			"HoudiniPDGManager.cpp.obj",
+			"HoudiniSkeletalMeshTranslator.cpp.obj",
+			"HoudiniSkeletalMeshUtils.cpp.obj",
+			"HoudiniSplineTranslator.cpp.obj"
+		],
+		"Module.HoudiniEngine.6.cpp.obj": [
+			"SAssetSelectionWidget.cpp.obj",
+			"HoudiniCoreTests.cpp.obj",
+			"UnrealAnimationTranslator.cpp.obj",
+			"UnrealBrushTranslator.cpp.obj",
+			"UnrealFoliageTypeTranslator.cpp.obj",
+			"UnrealInstanceTranslator.cpp.obj",
+			"UnrealLandscapeTranslator.cpp.obj",
+			"UnrealLevelInstanceTranslator.cpp.obj",
+			"UnrealMeshTranslator.cpp.obj",
+			"HoudiniStringResolver.cpp.obj",
+			"UnrealDataTableTranslator.cpp.obj",
+			"UnrealGeometryCollectionTranslator.cpp.obj",
+			"UnrealLandscapeSplineTranslator.cpp.obj"
+		],
+		"Module.HoudiniEngine.7.cpp.obj": [
+			"UnrealObjectInputManagerImpl.cpp.obj",
+			"UnrealObjectInputTypes.cpp.obj",
+			"UnrealObjectInputUtils.cpp.obj",
+			"UnrealSkeletalMeshTranslator.cpp.obj",
+			"UnrealSplineTranslator.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\projectlincolnlog\\plugins\\animations\\houdinilivelink\\intermediate\\build\\win64\\unrealeditor\\inc\\houdinilivelink\\uht\\houdinilivelink.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\projectlincolnlog\\intermediate\\build\\win64\\x64\\projectlincolnlogseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "d:\\github\\projectlincolnlog\\plugins\\animations\\houdinilivelink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\houdinilivelink\\definitions.houdinilivelink.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
